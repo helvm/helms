@@ -1,0 +1,10 @@
+# false = S K
+# true = K
+
+; not = (false) (true) ; (SK)(K)
+; or = true ; K
+; and = false = SK
+
+# not = S (S I (K false))(K true) ; (as S(SI(KF))(KT)x = SI(KF)x(KTx) = Ix(KFx)T = xFT)
+# or  = S I (K true)              ; (as SI(KT)xy       = Ix(KTx)y = xTy)
+# and = S S (K (K false))         ; (as SS(K(KF))xy    = Sx(K(KF)x)y = xy(KFy) = xyF)

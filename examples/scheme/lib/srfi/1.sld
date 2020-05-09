@@ -1,0 +1,6 @@
+(define-library (srfi 1)
+    (export-all)
+    (import (scheme)
+            (scheme base) 
+            (scheme cxr))
+    (include "srfi-1.scm"))

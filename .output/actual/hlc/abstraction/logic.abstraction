@@ -1,0 +1,91 @@
+[ Com "false"
+    ( Abs "x"
+        ( Abs "y"
+            ( Var "y" )
+        )
+    )
+, Com "true"
+    ( Abs "x"
+        ( Abs "y"
+            ( Var "x" )
+        )
+    )
+, Com "and"
+    ( Abs "p"
+        ( Abs "q"
+            ( App
+                ( App
+                    ( Var "p" )
+                    ( Var "q" )
+                )
+                ( Var "p" )
+            )
+        )
+    )
+, Com "or"
+    ( Abs "p"
+        ( Abs "q"
+            ( App
+                ( App
+                    ( Var "p" )
+                    ( Var "p" )
+                )
+                ( Var "q" )
+            )
+        )
+    )
+, Com "not"
+    ( Abs "p"
+        ( App
+            ( App
+                ( Var "p" )
+                ( Var "false" )
+            )
+            ( Var "true" )
+        )
+    )
+, Com "nand"
+    ( Abs "p"
+        ( Abs "q"
+            ( App
+                ( Var "not" )
+                ( App
+                    ( App
+                        ( Var "and" )
+                        ( Var "p" )
+                    )
+                    ( Var "q" )
+                )
+            )
+        )
+    )
+, Com "nor"
+    ( Abs "p"
+        ( Abs "q"
+            ( App
+                ( Var "not" )
+                ( App
+                    ( App
+                        ( Var "or" )
+                        ( Var "p" )
+                    )
+                    ( Var "q" )
+                )
+            )
+        )
+    )
+, Com "if"
+    ( Abs "p"
+        ( Abs "a"
+            ( Abs "b"
+                ( App
+                    ( App
+                        ( Var "p" )
+                        ( Var "a" )
+                    )
+                    ( Var "b" )
+                )
+            )
+        )
+    )
+]

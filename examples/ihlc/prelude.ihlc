@@ -1,0 +1,58 @@
+# false = \\ 1
+# true  = \\ 2
+# and   = \\ 2 1 2
+# or    = \\ 2 2 1
+# not   = \\ 1 false true
+# nand  = \\ not (and 2 1)
+# nor   = \\ not (or 1 2)
+# if    = \\\ 3 2 1
+
+# cons = \\\ 1 3 2
+# car = \p -> p true
+# cdr = \p -> p false
+; nil = \x -> \y -> y
+# nil = \x -> true
+# null = \p -> p (\x -> \y -> false)
+# repeat = \n -> \x -> n (cons x) nil
+# uncons = \xs -> \f -> \z -> xs (\a -> \b -> \_ -> f a b) z
+
+# succ = \n -> \f -> \x -> f (n f x)
+; plus = \m -> \n -> \f -> \x -> m f (n f x)
+# plus = \m -> \n -> m succ n
+; mult = \m -> \n -> \f -> m (n f)
+# mult = \m -> \n -> m (plus n) 0
+# pow = \b -> \e -> e b
+
+; 0 = \f -> \x -> x
+; 1 = \f -> \x -> f x
+; 2 = \f -> \x -> f (f x)
+; 3 = \f -> \x -> f (f (f x))
+
+# iszero = \n -> n (\x -> false) true
+# phi    = \x -> cons (cdr x) (succ (cdr x))
+# Φ      = \x -> cons (cdr x) (succ (cdr x))
+; pred   = \n -> \f -> \x -> n (\g -> \h -> h (g f)) (\u -> x) (\u -> u)
+; pred   = \n -> n (\g -> \k -> iszero (g 1) k (plus (g k) 1)) (\v -> 0) 0
+# pred   = \n -> car (n Φ (cons 0 0))
+# sub    = \m -> \n -> n pred m
+
+# leq    = \m -> \n -> iszero (sub m n)
+# geq    = \m -> \n -> leq n m
+# eq     = \m -> \n -> and (leq n m) (geq n m)
+# neq    = \m -> \n -> nand (leq n m) (geq n m)
+# lt     = \m -> \n -> and (leq n m) (not (geq n m))
+# gt     = \m -> \n -> and (not (leq n m)) (geq n m)
+
+# fix  = \g -> (\x -> g (x x)) (\x -> g (x x))
+# Y    = \g -> (\x -> g (x x)) (\x -> g (x x))
+; I    = \x -> x
+; S    = \x -> \y -> \z -> x z (y z)
+; K    = \x -> \y -> x
+# B    = \x -> \y -> \z -> x (y z)
+# C    = \x -> \y -> \z -> x z y
+# W    = \x -> \y -> x y y
+# ω    = \x -> x x
+# Δ    = \x -> x x
+# Ω    = ω ω
+
+# reverse = Y (\c -> \ys -> \xs -> uncons xs (\x -> \xs -> c (cons x ys) xs) ys) nil

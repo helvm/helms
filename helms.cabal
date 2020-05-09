@@ -1,0 +1,257 @@
+cabal-version:         2.4
+
+name:                  helms
+version:               0.1.0.0
+
+synopsis:              HELPA - Heavenly Esoteric Meta Schemer for Esoteric Languages
+description:           Please see the README on GitHub at <https://github.com/helvm/helms#readme>
+homepage:              http://helvm.org/helms/
+bug-reports:           https://github.com/helvm/helms/issues
+
+license:               Apache-2.0
+license-file:          docs/LICENSE-APACHE
+author:                Kamil Adam
+maintainer:            kamil.adam.zabinski@gmail.com
+copyright:             2020-2022 WriteOnly Developers
+
+category:              Language
+build-type:            Simple
+extra-source-files:
+  docs/CHANGELOG.md
+  docs/README.md
+
+tested-with:           GHC == 9.2.1
+
+source-repository head
+  type:                git
+  location:            https://github.com/helvm/helms
+
+flag ghcoptions
+  description:         compile with options
+  manual:              True
+  default:             False
+
+common common-options
+  build-depends:
+      base                 <  4.16
+    , relude               == 1.0.0.1
+  mixins:
+      base hiding (Prelude)
+    , relude (Relude as Prelude, Relude.Extra, Data.Text, Relude.Unsafe)
+  default-language:    Haskell2010
+  default-extensions:
+    EmptyDataDecls
+    ExistentialQuantification
+    FlexibleContexts
+    FlexibleInstances
+    FunctionalDependencies
+    GADTs
+    GeneralizedNewtypeDeriving
+    InstanceSigs
+    KindSignatures
+    LambdaCase
+    MultiParamTypeClasses
+    MultiWayIf
+    NamedFieldPuns
+--    NoImplicitPrelude
+    OverloadedStrings
+    PartialTypeSignatures
+    PatternGuards
+    PolyKinds
+    RankNTypes
+    RecordWildCards
+    ScopedTypeVariables
+    StandaloneDeriving
+    TupleSections
+    TypeFamilies
+    TypeSynonymInstances
+    ViewPatterns
+--    CPP
+--    TemplateHaskell
+--    ForeignFunctionInterface
+--    MagicHash
+--    UnliftedFFITypes
+    TypeOperators
+--    UnboxedTuples
+--    PackageImports
+--    QuasiQuotes
+--    DeriveAnyClass
+--    DeriveLift
+--    StaticPointers
+    DerivingStrategies
+    ConstraintKinds
+    StrictData
+  if flag(ghcoptions)
+    ghc-options:
+      -Wall
+      -Wcompat
+      -Widentities
+      -Wincomplete-uni-patterns
+      -Wincomplete-record-updates
+      -Wredundant-constraints
+      -Wnoncanonical-monad-instances
+      -fhide-source-paths
+--      -Wmissing-export-lists FIXME
+       -Wpartial-fields
+      -Wmissing-deriving-strategies
+      -fwrite-ide-info
+      -hiedir=.hie
+      -Wunused-packages
+      -fprint-potential-instances
+--      -Werror
+
+library
+  import:              common-options
+  hs-source-dirs:      hs/src
+  exposed-modules:
+    HelVM.Common.Collections.MapList
+    HelVM.Common.Collections.SList
+
+    HelVM.Common.Containers.LLIndexSafe
+    HelVM.Common.Containers.LLInsertDef
+    HelVM.Common.Containers.MTIndexSafe
+    HelVM.Common.Containers.MTInsertDef
+    HelVM.Common.Containers.Util
+
+    HelVM.Common.Control.Control
+    HelVM.Common.Control.Message
+    HelVM.Common.Control.Logger
+    HelVM.Common.Control.Safe
+
+    HelVM.Common.Digit.Digitable
+    HelVM.Common.Digit.Digits
+    HelVM.Common.Digit.ToDigit
+
+    HelVM.Common.ListLikeUtil
+    HelVM.Common.NamedValue
+    HelVM.Common.ReadText
+    HelVM.Common.SequencesUtil
+    HelVM.Common.Util
+    HelVM.Common.ZipA
+
+--    HelVM.HelMS.Cli
+--    HelVM.HelMS.Eval
+--    HelVM.HelMS.LispVal
+--    HelVM.HelMS.Parser
+--    HelVM.HelMS.Prim
+--    HelVM.HelMS.Repl
+
+    HelVM.HelMS.Calculus.CodeGenerator
+    HelVM.HelMS.Calculus.Lambda
+    HelVM.HelMS.Calculus.Lexer
+    HelVM.HelMS.Calculus.Reducer
+    HelVM.HelMS.Calculus.Value
+
+    HelVM.HelMS.Calculus.API.CalculusType
+    HelVM.HelMS.Calculus.API.CompilerOptions
+    HelVM.HelMS.Calculus.API.LambdaType
+    HelVM.HelMS.Calculus.API.Separator
+    HelVM.HelMS.Calculus.API.SwitchEnum
+
+    HelVM.HelMS.Calculus.Parsers.BlcParser
+    HelVM.HelMS.Calculus.Parsers.HaskellParser
+    HelVM.HelMS.Calculus.Parsers.WikiParser
+
+    HelVM.HelMS.Calculus.Reducers.AbstractionReducer
+    HelVM.HelMS.Calculus.Reducers.DefinedCombinatorReducer
+    HelVM.HelMS.Calculus.Reducers.DefinedCombinatorRemover
+    HelVM.HelMS.Calculus.Reducers.NaturalReducer
+
+    HelVM.HelMS.Repl.Option
+    HelVM.HelMS.Repl.RepLine
+    HelVM.HelMS.Repl.Types
+
+  other-extensions:
+  build-depends:
+      megaparsec
+    , containers           <  0.7
+    , bytestring
+    , data-default
+    , dlist
+    , ilist
+    , ListLike
+    , mono-traversable
+    , mtl
+    , pretty-simple
+    , repline
+    , slist
+    , text
+    , type-operators
+    , unliftio
+    , vector
+    , yjtools
+  mixins:
+      base hiding (Prelude)
+    , relude (Relude as Prelude, Relude.Extra , Data.Text)
+  hs-source-dirs:      hs/src
+  default-language:    Haskell2010
+  ghc-options:
+
+executable helms
+  import:              common-options
+  hs-source-dirs:      hs/app
+  main-is:             Main.hs
+  other-modules:
+    AppOptions
+  build-depends:
+      helms
+    , optparse-applicative >= 0.14.3.0
+  ghc-options:
+    -threaded
+    -rtsopts
+    -with-rtsopts=-N
+
+test-suite helms-test
+  import:              common-options
+  type:                exitcode-stdio-1.0
+  hs-source-dirs:      hs/test
+  main-is:             Main.hs
+  other-modules:
+    Spec
+
+    HelVM.Expectations
+    HelVM.GoldenExpectations
+    HelVM.MonadErrorSpec
+
+    HelVM.HelMS.Calculus.Parsers.FileUtil
+
+    HelVM.HelMS.Calculus.Parsers.HaskellParserSpec
+    HelVM.HelMS.Calculus.Parsers.WikiParserSpec
+  build-depends:
+      hspec
+    , hspec-core
+    , hspec-expectations-pretty-diff
+    , hspec-golden
+    , hspec-slow
+    , hspec-megaparsec
+
+    , helms
+
+--    , Earley
+    , megaparsec
+
+    , dlist
+    , filepath
+    , mtl
+    , type-operators
+
+  build-tool-depends:  hspec-discover:hspec-discover == 2.*
+  ghc-options:
+    -threaded
+    -rtsopts
+    -with-rtsopts=-N
+
+benchmark helms-benchmark
+  import:              common-options
+  type:                exitcode-stdio-1.0
+  hs-source-dirs:      hs/benchmark
+  main-is:             Main.hs
+  build-depends:
+      gauge
+
+--    , helms
+
+  ghc-options:
+    -threaded
+    -rtsopts
+    -with-rtsopts=-N

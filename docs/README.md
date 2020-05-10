@@ -2,7 +2,7 @@
 
 **HELMS** - Heavenly Esoteric Little Macro Schemer for Esoteric Languages implemented in Haskell/Eta.
 
-**HSMSML** - Hygienic Syntactic Macro Scheme MetaEvaluator Language.
+**HSMSML** - Hygienic Specific Macro Scheme MetaEvaluator Language is a kind of DSL for Esoteric Languages.
 
 ## For User
 * [INSTALL](INSTALL.md) - How to download, test and run.

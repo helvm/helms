@@ -20,6 +20,6 @@
 * [CODE OF CONDUCT](CODE_OF_CONDUCT.md)
 
 
-[Very high-level]:    https://en.wikipedia.org/wiki/Very_high-level_programming_language
+[Very high-level]:   https://en.wikipedia.org/wiki/Very_high-level_programming_language
 [Fourth-generation]: https://en.wikipedia.org/wiki/Fourth-generation_programming_language
 [DSL]:               https://en.wikipedia.org/wiki/Domain-specific_language

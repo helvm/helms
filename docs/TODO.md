@@ -2,7 +2,10 @@
 
 **Future Features**
 
-*We do not have **todo** now.*
+* [ ] [HaPyLi](http://web.archive.org/web/20120710062041/http://hapyli.webs.com/) ([Backup](https://helvm.github.io/hapyli/))
+* [ ] [Sponge](http://cubonegro.orgfree.com/sponge/sponge.html) ([Code](http://cubonegro.orgfree.com/sponge/sponge.lisp)) ([Backup](https://helvm.github.io/sponge/sponge.html))
+* [ ] [TextFunge](https://github.com/Mikescher/BefunWrite) ([Backup](https://github.com/helvm/BefunWrite))
+
 
 You can propose feature by [GitHub](https://github.com/helvm/helap/issues).
 

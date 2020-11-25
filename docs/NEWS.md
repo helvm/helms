@@ -1,4 +1,4 @@
-# NEWS
+# NEWS 📰
 
 **New features.**
 

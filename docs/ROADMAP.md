@@ -12,4 +12,4 @@ For short version see [TODO](TODO.md).
 * [ ] Implement SICP assembler in Scheme48
 * [ ] Implement SICP assembler in Haskell
 
-See [SICP-2020](https://github.com/helvm/SICP-2020)
+See [SICP-2020](https://github.com/helvm/SICP-2020) [SICP](https://github.com/ivanjovanovic/sicp)

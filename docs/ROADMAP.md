@@ -11,3 +11,5 @@ For short version see [TODO](TODO.md).
 * [ ] Implement SICP compiler in Scheme48
 * [ ] Implement SICP assembler in Scheme48
 * [ ] Implement SICP assembler in Haskell
+
+See [SICP-2020](https://github.com/helvm/SICP-2020)

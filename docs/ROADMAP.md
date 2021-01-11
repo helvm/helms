@@ -4,8 +4,8 @@
 
 For short version see [TODO](TODO.md).
 
-* [ ] Implement Scheme48 in Haskell
-* [ ] Implement Sponge in Scheme48
+* [ ] Implement [Scheme48 in Haskell](https://wespiser.com/writings/wyas/home.html)
+* [ ] Implement [Sponge](http://cubonegro.orgfree.com/sponge/sponge.html) in Scheme48
 * [ ] Implement Scheme48 in Scheme48
 * [ ] Implement SICP interpreter in Scheme48
 * [ ] Implement SICP compiler in Scheme48

@@ -1,4 +1,4 @@
-# INSTALL
+# 🏗️ INSTALL
 
 How to download, test and run.
 

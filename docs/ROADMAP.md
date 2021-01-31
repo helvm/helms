@@ -17,3 +17,10 @@ See
 * http://community.schemewiki.org/?SICP-Solutions (compiling to Fortran)
 * https://github.com/ivanjovanovic/sicp
 * https://github.com/Pluies/SICP
+
+Scheme implementations:
+* [Write Yourself a Scheme in 48 Hours](https://github.com/helvm/scheme48)
+* [Write You A Scheme, Version 2](https://github.com/helvm/scheme)
+* [Wiz - A Scheme interpreter implemented in Haskell](https://github.com/helvm/wiz)
+* [Lisper](https://github.com/helvm/lisper)
+* [husk\scheme](https://github.com/helvm/husk-scheme)

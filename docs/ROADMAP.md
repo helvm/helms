@@ -1,8 +1,9 @@
 # 🛣️ ROADMAP
 
-## Languages
+## Languages to implement
 * [husk\scheme](https://github.com/helvm/husk-scheme) - front of the compiler
 * [untyped](https://github.com/helvm/untyped)/[tapl](https://github.com/helvm/haskell-tapl) - An implementation of untyped lambda calculus in Haskell
+* [Sponge](http://cubonegro.orgfree.com/sponge/sponge.html)
 * [silly-joy](https://github.com/helvm/silly-joy) is an interpreter for the concatenative programming language Joy, implemented in Haskell using extensible-effects.
 * Dupe
 * [Carp](https://github.com/helvm/Carp) - A statically typed lisp, without a GC, for real-time applications. 

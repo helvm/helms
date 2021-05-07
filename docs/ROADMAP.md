@@ -1,11 +1,11 @@
 # 🛣️ ROADMAP
 
 ## Scheme implementation
+* [husk\scheme](https://github.com/helvm/husk-scheme) - life version
 * [Write You A Scheme, Version 2](https://github.com/helvm/scheme) - best version
 * [Write Yourself a Scheme in 48 Hours](https://github.com/helvm/scheme48) - first version
 * [Wiz - A Scheme interpreter implemented in Haskell](https://github.com/helvm/wiz) - a toy Scheme interpreter in Haskell.
-* [Lisper](https://github.com/helvm/lisper) - A tiny scheme interpreter in Haskell
-* [husk\scheme](https://github.com/helvm/husk-scheme) - life version
+* [Lisper](https://github.com/helvm/lisper) - a tiny scheme interpreter in Haskell
 
 ## Joy implementation
 * [silly-joy](https://github.com/helvm/silly-joy) is an interpreter for the concatenative programming language Joy, implemented in Haskell using extensible-effects.
@@ -19,7 +19,7 @@
 * [untyped](https://github.com/helvm/untyped)/[tapl](https://github.com/helvm/haskell-tapl) - An implementation of untyped lambda calculus in Haskell
 * [lisp-llvm-compiler](https://github.com/helvm/lisp-llvm-compiler) - only `add` and `sub`
 * [Sponge](http://cubonegro.orgfree.com/sponge/sponge.html) - a quick and dirty compiler for a tiny subset of Scheme into Befunge 98. The compiler is written in (hopefully ANSI) Common Lisp.
-* [SICP]
+* SICP
 * Dupe
 * [Carp](https://github.com/helvm/Carp) - A statically typed lisp, without a GC, for real-time applications. 
 

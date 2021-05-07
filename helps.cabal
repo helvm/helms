@@ -3,9 +3,9 @@ cabal-version:       2.2
 --  see http://eta-lang.org/docs/
 
 name:                helms
-version:             0.1.0.0
+version:             0.3.1.0
 
-synopsis:            HELPA - Heavenly Esoteric Meta Schemer for Esoteric Languages implemented in Haskell/Eta
+synopsis:            HELPA - Heavenly Esoteric Little Pre Schemer for Esoteric Languages implemented in Haskell/Eta
 description:         Please see the README on GitHub at <https://github.com/helvm/helms#readme>
 homepage:            https://helvm.github.io/helms/
 bug-reports:         https://github.com/helvm/helms/issues

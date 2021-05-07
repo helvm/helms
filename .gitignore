@@ -23,7 +23,12 @@ cabal.project.local~
 .ghc.environment.*
 
 .idea
+*.iml
+build/
 .gradle
+gradle/
 
 Gemfile.lock
 _site
+
+.hlint-*/

@@ -1,5 +1,12 @@
 # 🛣️ ROADMAP
 
+## Languages
+* [husk\scheme](https://github.com/helvm/husk-scheme) - front of the compiler
+* [untyped](https://github.com/helvm/untyped)/[tapl](https://github.com/helvm/haskell-tapl) - An implementation of untyped lambda calculus in Haskell
+* [silly-joy](https://github.com/helvm/silly-joy) is an interpreter for the concatenative programming language Joy, implemented in Haskell using extensible-effects.
+
+
+
 **Planned features.**
 
 For short version see [TODO](TODO.md).
@@ -18,9 +25,8 @@ See
 * https://github.com/ivanjovanovic/sicp
 * https://github.com/Pluies/SICP
 
-Scheme implementations:
+## Scheme implementations:
 * [Write Yourself a Scheme in 48 Hours](https://github.com/helvm/scheme48)
 * [Write You A Scheme, Version 2](https://github.com/helvm/scheme)
 * [Wiz - A Scheme interpreter implemented in Haskell](https://github.com/helvm/wiz)
 * [Lisper](https://github.com/helvm/lisper)
-* [husk\scheme](https://github.com/helvm/husk-scheme)

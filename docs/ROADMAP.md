@@ -11,6 +11,8 @@
 * [Write Yourself a Scheme in 48 Hours](https://github.com/helvm/scheme48) - first version
 * [Wiz - A Scheme interpreter implemented in Haskell](https://github.com/helvm/wiz) - a toy Scheme interpreter in Haskell.
 * [Lisper](https://github.com/helvm/lisper) - a tiny scheme interpreter in Haskell
+* https://norvig.com/lispy.html
+
 
 ## Awasome Scheme - UnShceme
 * [untyped](https://github.com/helvm/untyped)/[tapl](https://github.com/helvm/haskell-tapl) - An implementation of untyped lambda calculus in Haskell

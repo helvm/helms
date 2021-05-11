@@ -57,3 +57,5 @@ See
 * http://community.schemewiki.org/?SICP-Solutions (compiling to Fortran)
 * https://github.com/ivanjovanovic/sicp
 * https://github.com/Pluies/SICP
+
+Eating your own dog food

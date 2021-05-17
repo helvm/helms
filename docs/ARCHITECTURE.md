@@ -1,3 +1,3 @@
 # 📐 ARCHITECTURE
 
-We do not have ARCHITECTURE
+We do not have any ARCHITECTURE

@@ -1,6 +1,6 @@
-# Welcome to 🔬 ⚕️ HELMS
+# Welcome to 🔬 ⚕️ HelMS
 
-**🔬 ⚕️ HELMS** - Heavenly Esoteric Little Macro Schemer for Esoteric Languages implemented in Haskell/Eta.
+**🔬 ⚕️ HelMS** - Heavenly Esoteric Little Macro Schemer for Esoteric Languages implemented in Haskell/Eta.
 
 **🧑‍🔬 🧑‍⚕️ HSMSML** - Hygienic Specific Macro Scheme MetaEvaluator Language is a kind of [Very high-level] [Fourth-generation] [DSL] for Esoteric Languages.
 

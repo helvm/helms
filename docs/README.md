@@ -5,7 +5,7 @@ and it is fourth part of [HelVM](http://helvm.online/) project.
 
 **🧑‍🔬 🧑‍⚕️ HSMSML** - Hygienic Specific Macro Scheme MetaEvaluator Language is a kind of [Very high-level] [Fourth-generation] [DSL] for Esoteric Languages.
 
-**🧑‍🔬 🧑‍⚕️ HSMLSM**  - Hygienic Specific Macro Language of Scheme MetaEvaluator
+**🧑‍🔬 🧑‍⚕️ HSMLSM**  - Hygienic Specific Macro (Spaghetti Monstrous) Language of Scheme MetaEvaluator inspired by Flying Spaghetti Monster (FSM) 
 
 ## For User
 * [INSTALL](INSTALL.md) - How to download, test and run.

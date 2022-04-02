@@ -30,9 +30,9 @@ spec = describe "parse" $ do
     , "prelude"
     , "reverse"
     ] $ \name -> do
-    it ("abstraction"  </> name) $ showP <$> parseFileSafe name `goldenShouldIO` buildAbsoluteHlcAbstractionFileName name
-    it ("combinator"   </> name) $ showP <$> (reduceAbstractions <$> parseFileSafe name) `goldenShouldIO` buildAbsoluteHlcCombinatorFileName name
-    it ("ski"          </> name) $ showP <$> (reduceDefinedCombinators . reduceAbstractions <$> parseFileSafe name) `goldenShouldIO` buildAbsoluteHlcSkiFileName name
+    it ("abstraction"  </> name) $ showP <$> parseFileSafe name `goldenShouldIO` buildAbsoluteAbstractionFileName "hlc" name
+    it ("combinator"   </> name) $ showP <$> (reduceAbstractions <$> parseFileSafe name) `goldenShouldIO` buildAbsoluteCombinatorFileName "hlc" name
+    it ("ski"          </> name) $ showP <$> (reduceDefinedCombinators . reduceAbstractions <$> parseFileSafe name) `goldenShouldIO` buildAbsoluteSkiFileName "hlc" name
 
   describe "unit" $ forM_
     [ ("\\y->y(\\x->x)y\n"            , [Abs "y" (App (App (Var "y") (Abs "x" (Var "x"))) (Var "y"))])
@@ -44,7 +44,7 @@ spec = describe "parse" $ do
     it (toString source) $ parseCalculus "<stdin>" source `shouldParse` code
 
 parseFileSafe :: FilePath -> IO LambdaList
-parseFileSafe filePath = safeIOToIO $ parseTextSafe filePath <$> readHlcFile filePath
+parseFileSafe filePath = safeIOToIO $ parseTextSafe filePath <$> readLangFile "hlc" filePath
 
 parseTextSafe :: FilePath -> Text -> Safe LambdaList
 parseTextSafe filePath = liftEitherLegacy . first errorBundlePretty . parseCalculus filePath

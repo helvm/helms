@@ -39,8 +39,6 @@ terminalParser = variableParser <|> parens lambdaParser
 variableParser :: Parser Lambda
 variableParser = Var <$> (identifierParser <|> (show <$> decimalParser)) <?> "variable"
 
-
-
 -- | Util
 foldl0 :: (a -> a -> a) -> a -> [a] -> a
 foldl0 _ d      [] = d

@@ -1,14 +1,12 @@
 module HelVM.HelMS.Calculus.Parsers.FileUtil (
-  readHlcFile,
+  readLangFile,
   readSourceFile,
-  buildAbsoluteHlcFileName,
-  buildAbsoluteHlcSkiFileName,
-  buildAbsoluteHlcCombinatorFileName,
-  buildAbsoluteHlcAbstractionFileName,
-  buildAbsoluteHlcIlFileName,
+  buildAbsoluteSkiFileName,
+  buildAbsoluteCombinatorFileName,
+  buildAbsoluteAbstractionFileName,
+  buildAbsoluteIlFileName,
   buildAbsoluteLangFileName,
   buildAbsoluteModeFileName,
-  buildAbsoluteIlFileName,
   buildAbsoluteExtFileName,
   buildAbsoluteOutFileName,
   buildAbsoluteLogFileName,
@@ -19,38 +17,29 @@ module HelVM.HelMS.Calculus.Parsers.FileUtil (
 
 import           System.FilePath.Posix
 
-readHlcFile :: MonadIO m => FilePath -> m Text
-readHlcFile = readLangFile "hlc"
-
 readLangFile :: MonadIO m => FilePath -> FilePath -> m Text
 readLangFile lang fileName = readSourceFile $ lang  </> fileName <.> lang
 
 readSourceFile :: MonadIO m => FilePath -> m Text
 readSourceFile filePath = readFileText $ "examples" </> filePath
 
-buildAbsoluteHlcFileName :: FilePath -> FilePath
-buildAbsoluteHlcFileName = buildAbsoluteLangFileName "hlc"
+buildAbsoluteSkiFileName :: FilePath -> FilePath -> FilePath
+buildAbsoluteSkiFileName = buildAbsoluteExtFileName "ski"
 
-buildAbsoluteHlcSkiFileName :: FilePath -> FilePath
-buildAbsoluteHlcSkiFileName = buildAbsoluteExtFileName "ski" "hlc"
+buildAbsoluteCombinatorFileName :: FilePath -> FilePath -> FilePath
+buildAbsoluteCombinatorFileName = buildAbsoluteExtFileName "combinator"
 
-buildAbsoluteHlcCombinatorFileName :: FilePath -> FilePath
-buildAbsoluteHlcCombinatorFileName = buildAbsoluteExtFileName "combinator" "hlc"
+buildAbsoluteAbstractionFileName :: FilePath -> FilePath -> FilePath
+buildAbsoluteAbstractionFileName = buildAbsoluteExtFileName "abstraction"
 
-buildAbsoluteHlcAbstractionFileName :: FilePath -> FilePath
-buildAbsoluteHlcAbstractionFileName = buildAbsoluteExtFileName "abstraction" "hlc"
-
-buildAbsoluteHlcIlFileName :: FilePath -> FilePath
-buildAbsoluteHlcIlFileName = buildAbsoluteExtFileName "il" "hlc"
+buildAbsoluteIlFileName :: FilePath -> FilePath -> FilePath
+buildAbsoluteIlFileName = buildAbsoluteExtFileName "il"
 
 buildAbsoluteLangFileName :: FilePath -> FilePath -> FilePath
 buildAbsoluteLangFileName lang fileName = lang </> fileName <.> lang
 
 buildAbsoluteModeFileName :: FilePath -> FilePath -> FilePath -> FilePath
 buildAbsoluteModeFileName mode lang fileName = lang </> mode </> fileName <.> lang
-
-buildAbsoluteIlFileName :: FilePath -> FilePath -> FilePath
-buildAbsoluteIlFileName = buildAbsoluteExtFileName "il"
 
 buildAbsoluteExtFileName :: FilePath -> FilePath -> FilePath -> FilePath
 buildAbsoluteExtFileName ext lang fileName = lang </> ext </> fileName <.> ext

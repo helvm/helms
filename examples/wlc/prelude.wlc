@@ -1,5 +1,5 @@
 ; Constants
-# ID := \x.x
+# ID := λx.x
 # TRUE := λx.λy.x
 # FALSE := λx.λy.y
 
@@ -41,7 +41,7 @@
 ; Arithmetic - pred
 # ISZERO := λn.n (λx.FALSE) TRUE
 # Φ := λx.PAIR (SECOND x) (SUCC (SECOND x))
-# PHI = Φ
+# PHI := Φ
 ; PRED := λn.λf.λx.n (λg.λh.h (g f)) (λu.x) (λu.u)
 ; PRED := λn.n (λg.λk.ISZERO (g 1) k (PLUS (g k) 1)) (λv.0) 0
 # PRED := λn.FIRST (n Φ (PAIR 0 0))

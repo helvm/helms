@@ -1,0 +1,1 @@
+# mult = \m -> \n -> m (plus n) 0

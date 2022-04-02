@@ -1,0 +1,16 @@
+[ Com "mult"
+    ( Abs "m"
+        ( Abs "n"
+            ( App
+                ( App
+                    ( Var "m" )
+                    ( App
+                        ( Var "plus" )
+                        ( Var "n" )
+                    )
+                )
+                ( Var "0" )
+            )
+        )
+    )
+]

@@ -129,6 +129,17 @@ library
     HelVM.Common.Util
     HelVM.Common.ZipA
 
+    HelVM.HelMS.Calculus.Parsers.HaskellParser
+    HelVM.HelMS.Calculus.Parsers.WikiParser
+
+    HelVM.HelMS.Calculus.Reducers.AbstractionReducer
+    HelVM.HelMS.Calculus.Reducers.DefinedCombinatorReducer
+
+    HelVM.HelMS.Calculus.Lambda
+    HelVM.HelMS.Calculus.Lexer
+    HelVM.HelMS.Calculus.Reducer
+    HelVM.HelMS.Calculus.Value
+
     HelVM.HelMS.Repl.Option
     HelVM.HelMS.Repl.RepLine
     HelVM.HelMS.Repl.Types
@@ -140,6 +151,7 @@ library
     , dlist
     , ilist
     , ListLike
+    , megaparsec
     , mono-traversable
     , mtl
     , pretty-simple
@@ -181,16 +193,22 @@ test-suite helms-test
     HelVM.Expectations
     HelVM.GoldenExpectations
     HelVM.MonadErrorSpec
+
+    HelVM.HelMS.Calculus.Parsers.FileUtil
+    HelVM.HelMS.Calculus.Parsers.HaskellParserSpec
+    HelVM.HelMS.Calculus.Parsers.WikiParserSpec
+
   build-depends:
       hspec
     , hspec-core
     , hspec-expectations-pretty-diff
     , hspec-golden
     , hspec-slow
+    , hspec-megaparsec
 
     , helms
-
     , filepath
+    , megaparsec
     , mtl
     , type-operators
 

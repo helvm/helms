@@ -1,0 +1,124 @@
+; Constants
+# id      = \x -> x
+; defineCombinator id \x . x
+; =combinator id \x . x
+# true    = \x -> \y -> x
+# false   = \x -> \y -> y
+
+; Logic
+# and     = \p -> \q -> p q p
+# or      = \p -> \q -> p p q
+# not     = \p -> p false true
+# nand    = \p -> \q -> not (and p q)
+# nor     = \p -> \q -> not (or p q)
+# if      = \p -> \a -> \b -> p a b
+# if      = \p -> \x -> \y -> p x y
+
+# compose = \f -> \g -> \x -> f (g x)
+;# .       = compose
+
+# pair    = \x -> \y -> \f -> f x y
+;# :       = pair
+# fst     = \p -> p true
+# snd     = \p -> p false
+# car     = fst
+# cdr     = snd
+
+; List
+# cons    = \x -> \y -> \f -> \init -> f x (y f init)
+; nil     = \x -> \init -> init
+# nil     = false
+# null    = \p -> p (\x -> \y -> false)
+# repeat  = \n -> \x -> n (pair x) nil
+# uncons  = \xs -> \f -> \z -> xs (\a -> \b -> \_ -> f a b) z
+
+# fold    = \f -> \l -> \init -> l f init
+# map     = \f -> \l -> \g -> \init -> l (compose g f) init
+
+; Arithmetic add
+# succ    = \n -> \f -> \x -> f (n f x)
+; add     = \m -> \n -> \f -> \x -> m f (n f x)
+# add     = \m -> \n -> m succ n
+; mul     = \m -> \n -> \f -> m (n f)
+# mul     = \m -> \n -> m (add n) 0
+# pow     = \b -> \e -> e b
+
+; 0       = \f -> \x -> x
+; 1       = \f -> \x -> f x
+; 2       = \f -> \x -> f (f x)
+; 3       = \f -> \x -> f (f (f x))
+
+; 2       = \f x . f ` f x
+
+; Arithmetic minus
+# is0     = \n -> n (\x -> false) true
+# eq0     = is0
+# phi     = \x -> cons (cdr x) (succ (cdr x))
+# Φ       = phi
+; pred    = \n -> \f -> \x -> n (\g -> \h -> h (g f)) (\u -> x) (\u -> u)
+; pred    = \n -> n (\g -> \k -> is0 (g 1) k (add (g k) 1)) (\v -> 0) 0
+# pred    = \n -> car (n Φ (cons 0 0))
+# sub     = \m -> \n -> n pred m
+
+
+; Compare
+# leq     = \m -> \n -> is0 (sub m n)
+# geq     = \m -> \n -> leq n m
+# eq      = \m -> \n -> and (leq n m) (geq n m)
+# neq     = \m -> \n -> nand (leq n m) (geq n m)
+# lt      = \m -> \n -> and (leq n m) (not (geq n m))
+# gt      = \m -> \n -> and (not (leq n m)) (geq n m)
+
+; Other
+# fix     = \rec -> (\x -> rec (x x)) (\x -> rec (x x))
+# Y       = fix
+; I       = id
+; S       = \x -> \y -> \z -> x z (y z)
+; K       = true
+# B       = \x -> \y -> \z -> x (y z)
+# C       = \x -> \y -> \z -> x z y
+# W       = \x -> \y -> x y y
+# ω       = \x -> x x
+# Δ       = \x -> x x
+# Ω       = ω ω
+
+; List recursive
+# reverse = fix (\rec -> \ys -> \xs -> uncons xs (\x -> \xs -> rec (cons x ys) xs) ys) nil
+# fact    = fix (\rec -> \n -> (is0 n) 1 (mul n (rec (pred n))))
+
+# Var     = \m -> \a -> \b -> \c -> a m
+# App     = \m -> \n -> \a -> \b -> \c -> b m n
+# Abs     = \f -> \a -> \b -> \c -> c f
+
+; (define-syntax let (syntax-rules () ((let ((var val) ...) body ...) ((lambda (var ...) body ...) val ...))) )
+; # add2 = add 2 
+; (\x -> add2 x) 3
+; 
+; let x = 3 in add2 x
+; fix f = let {x = f x} in x
+; fix f = let x = (f x) in x
+
+; https://crypto.stanford.edu/~blynn/lambda/
+; E = Y(\e m.m (\x.x) (\m n.(e m)(e n)) (\m v.e (m v)))
+; P = Y(\p m.(\x.x(\v.p(\a b c.b m(v (\a b.b))))m))
+; RR = Y(\r m.m (\x.x) (\m n.(r m) (\a b.a) (r n)) (\m.(\g x.x g(\a b c.c(\w.g(P (\a b c.a w))(\a b.b)))) (\v.r(m v))))
+; R = \m.RR m (\a b.b)
+
+
+; https://lambdacalc.io/
+
+; http://www.chatzi.org/lci/
+
+; # id = \x . x
+
+; = createList \ e . createList0 nil e
+; = createList0 fix (\ rec l e . if (null e) (reverse l) (rec (cons e l)))
+; createList 1 2 3 4 nil
+
+; defineCombinator
+; expand ; expandCombinator; expandUnLambda
+; expand false
+; * ``+ 1 2 ``+ 3 4
+; raw ; raw version o combinator
+; pretty ; pretty version of combinator with numbers, list and values
+

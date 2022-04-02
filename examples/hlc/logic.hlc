@@ -1,0 +1,8 @@
+# false = \x -> \y -> y
+# true  = \x -> \y -> x
+# and   = \p -> \q -> p q p
+# or    = \p -> \q -> p p q
+# not   = \p -> p false true
+# nand  = \p -> \q -> not (and p q)
+# nor   = \p -> \q -> not (or p q)
+# if    = \p -> \a -> \b -> p a b

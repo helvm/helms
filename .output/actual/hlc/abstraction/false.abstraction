@@ -1,0 +1,7 @@
+[ Com "false"
+    ( Abs "x"
+        ( Abs "y"
+            ( Var "y" )
+        )
+    )
+]

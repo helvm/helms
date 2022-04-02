@@ -1,0 +1,712 @@
+[ Com "id"
+    ( Abs "x"
+        ( Var "x" )
+    )
+, Com "true"
+    ( Abs "x"
+        ( Abs "y"
+            ( Var "x" )
+        )
+    )
+, Com "false"
+    ( Abs "x"
+        ( Abs "y"
+            ( Var "y" )
+        )
+    )
+, Com "and"
+    ( Abs "p"
+        ( Abs "q"
+            ( App
+                ( App
+                    ( Var "p" )
+                    ( Var "q" )
+                )
+                ( Var "p" )
+            )
+        )
+    )
+, Com "or"
+    ( Abs "p"
+        ( Abs "q"
+            ( App
+                ( App
+                    ( Var "p" )
+                    ( Var "p" )
+                )
+                ( Var "q" )
+            )
+        )
+    )
+, Com "not"
+    ( Abs "p"
+        ( App
+            ( App
+                ( Var "p" )
+                ( Var "false" )
+            )
+            ( Var "true" )
+        )
+    )
+, Com "nand"
+    ( Abs "p"
+        ( Abs "q"
+            ( App
+                ( Var "not" )
+                ( App
+                    ( App
+                        ( Var "and" )
+                        ( Var "p" )
+                    )
+                    ( Var "q" )
+                )
+            )
+        )
+    )
+, Com "nor"
+    ( Abs "p"
+        ( Abs "q"
+            ( App
+                ( Var "not" )
+                ( App
+                    ( App
+                        ( Var "or" )
+                        ( Var "p" )
+                    )
+                    ( Var "q" )
+                )
+            )
+        )
+    )
+, Com "if"
+    ( Abs "p"
+        ( Abs "a"
+            ( Abs "b"
+                ( App
+                    ( App
+                        ( Var "p" )
+                        ( Var "a" )
+                    )
+                    ( Var "b" )
+                )
+            )
+        )
+    )
+, Com "if"
+    ( Abs "p"
+        ( Abs "x"
+            ( Abs "y"
+                ( App
+                    ( App
+                        ( Var "p" )
+                        ( Var "x" )
+                    )
+                    ( Var "y" )
+                )
+            )
+        )
+    )
+, Com "compose"
+    ( Abs "f"
+        ( Abs "g"
+            ( Abs "x"
+                ( App
+                    ( Var "f" )
+                    ( App
+                        ( Var "g" )
+                        ( Var "x" )
+                    )
+                )
+            )
+        )
+    )
+, Com "pair"
+    ( Abs "x"
+        ( Abs "y"
+            ( Abs "f"
+                ( App
+                    ( App
+                        ( Var "f" )
+                        ( Var "x" )
+                    )
+                    ( Var "y" )
+                )
+            )
+        )
+    )
+, Com "fst"
+    ( Abs "p"
+        ( App
+            ( Var "p" )
+            ( Var "true" )
+        )
+    )
+, Com "snd"
+    ( Abs "p"
+        ( App
+            ( Var "p" )
+            ( Var "false" )
+        )
+    )
+, Com "car"
+    ( Var "fst" )
+, Com "cdr"
+    ( Var "snd" )
+, Com "cons"
+    ( Abs "x"
+        ( Abs "y"
+            ( Abs "f"
+                ( Abs "init"
+                    ( App
+                        ( App
+                            ( Var "f" )
+                            ( Var "x" )
+                        )
+                        ( App
+                            ( App
+                                ( Var "y" )
+                                ( Var "f" )
+                            )
+                            ( Var "init" )
+                        )
+                    )
+                )
+            )
+        )
+    )
+, Com "nil"
+    ( Var "false" )
+, Com "null"
+    ( Abs "p"
+        ( App
+            ( Var "p" )
+            ( Abs "x"
+                ( Abs "y"
+                    ( Var "false" )
+                )
+            )
+        )
+    )
+, Com "repeat"
+    ( Abs "n"
+        ( Abs "x"
+            ( App
+                ( App
+                    ( Var "n" )
+                    ( App
+                        ( Var "pair" )
+                        ( Var "x" )
+                    )
+                )
+                ( Var "nil" )
+            )
+        )
+    )
+, Com "uncons"
+    ( Abs "xs"
+        ( Abs "f"
+            ( Abs "z"
+                ( App
+                    ( App
+                        ( Var "xs" )
+                        ( Abs "a"
+                            ( Abs "b"
+                                ( Abs "_"
+                                    ( App
+                                        ( App
+                                            ( Var "f" )
+                                            ( Var "a" )
+                                        )
+                                        ( Var "b" )
+                                    )
+                                )
+                            )
+                        )
+                    )
+                    ( Var "z" )
+                )
+            )
+        )
+    )
+, Com "fold"
+    ( Abs "f"
+        ( Abs "l"
+            ( Abs "init"
+                ( App
+                    ( App
+                        ( Var "l" )
+                        ( Var "f" )
+                    )
+                    ( Var "init" )
+                )
+            )
+        )
+    )
+, Com "map"
+    ( Abs "f"
+        ( Abs "l"
+            ( Abs "g"
+                ( Abs "init"
+                    ( App
+                        ( App
+                            ( Var "l" )
+                            ( App
+                                ( App
+                                    ( Var "compose" )
+                                    ( Var "g" )
+                                )
+                                ( Var "f" )
+                            )
+                        )
+                        ( Var "init" )
+                    )
+                )
+            )
+        )
+    )
+, Com "succ"
+    ( Abs "n"
+        ( Abs "f"
+            ( Abs "x"
+                ( App
+                    ( Var "f" )
+                    ( App
+                        ( App
+                            ( Var "n" )
+                            ( Var "f" )
+                        )
+                        ( Var "x" )
+                    )
+                )
+            )
+        )
+    )
+, Com "add"
+    ( Abs "m"
+        ( Abs "n"
+            ( App
+                ( App
+                    ( Var "m" )
+                    ( Var "succ" )
+                )
+                ( Var "n" )
+            )
+        )
+    )
+, Com "mul"
+    ( Abs "m"
+        ( Abs "n"
+            ( App
+                ( App
+                    ( Var "m" )
+                    ( App
+                        ( Var "add" )
+                        ( Var "n" )
+                    )
+                )
+                ( Var "0" )
+            )
+        )
+    )
+, Com "pow"
+    ( Abs "b"
+        ( Abs "e"
+            ( App
+                ( Var "e" )
+                ( Var "b" )
+            )
+        )
+    )
+, Com "is0"
+    ( Abs "n"
+        ( App
+            ( App
+                ( Var "n" )
+                ( Abs "x"
+                    ( Var "false" )
+                )
+            )
+            ( Var "true" )
+        )
+    )
+, Com "eq0"
+    ( Var "is0" )
+, Com "phi"
+    ( Abs "x"
+        ( App
+            ( App
+                ( Var "cons" )
+                ( App
+                    ( Var "cdr" )
+                    ( Var "x" )
+                )
+            )
+            ( App
+                ( Var "succ" )
+                ( App
+                    ( Var "cdr" )
+                    ( Var "x" )
+                )
+            )
+        )
+    )
+, Com "Φ"
+    ( Var "phi" )
+, Com "pred"
+    ( Abs "n"
+        ( App
+            ( Var "car" )
+            ( App
+                ( App
+                    ( Var "n" )
+                    ( Var "Φ" )
+                )
+                ( App
+                    ( App
+                        ( Var "cons" )
+                        ( Var "0" )
+                    )
+                    ( Var "0" )
+                )
+            )
+        )
+    )
+, Com "sub"
+    ( Abs "m"
+        ( Abs "n"
+            ( App
+                ( App
+                    ( Var "n" )
+                    ( Var "pred" )
+                )
+                ( Var "m" )
+            )
+        )
+    )
+, Com "leq"
+    ( Abs "m"
+        ( Abs "n"
+            ( App
+                ( Var "is0" )
+                ( App
+                    ( App
+                        ( Var "sub" )
+                        ( Var "m" )
+                    )
+                    ( Var "n" )
+                )
+            )
+        )
+    )
+, Com "geq"
+    ( Abs "m"
+        ( Abs "n"
+            ( App
+                ( App
+                    ( Var "leq" )
+                    ( Var "n" )
+                )
+                ( Var "m" )
+            )
+        )
+    )
+, Com "eq"
+    ( Abs "m"
+        ( Abs "n"
+            ( App
+                ( App
+                    ( Var "and" )
+                    ( App
+                        ( App
+                            ( Var "leq" )
+                            ( Var "n" )
+                        )
+                        ( Var "m" )
+                    )
+                )
+                ( App
+                    ( App
+                        ( Var "geq" )
+                        ( Var "n" )
+                    )
+                    ( Var "m" )
+                )
+            )
+        )
+    )
+, Com "neq"
+    ( Abs "m"
+        ( Abs "n"
+            ( App
+                ( App
+                    ( Var "nand" )
+                    ( App
+                        ( App
+                            ( Var "leq" )
+                            ( Var "n" )
+                        )
+                        ( Var "m" )
+                    )
+                )
+                ( App
+                    ( App
+                        ( Var "geq" )
+                        ( Var "n" )
+                    )
+                    ( Var "m" )
+                )
+            )
+        )
+    )
+, Com "lt"
+    ( Abs "m"
+        ( Abs "n"
+            ( App
+                ( App
+                    ( Var "and" )
+                    ( App
+                        ( App
+                            ( Var "leq" )
+                            ( Var "n" )
+                        )
+                        ( Var "m" )
+                    )
+                )
+                ( App
+                    ( Var "not" )
+                    ( App
+                        ( App
+                            ( Var "geq" )
+                            ( Var "n" )
+                        )
+                        ( Var "m" )
+                    )
+                )
+            )
+        )
+    )
+, Com "gt"
+    ( Abs "m"
+        ( Abs "n"
+            ( App
+                ( App
+                    ( Var "and" )
+                    ( App
+                        ( Var "not" )
+                        ( App
+                            ( App
+                                ( Var "leq" )
+                                ( Var "n" )
+                            )
+                            ( Var "m" )
+                        )
+                    )
+                )
+                ( App
+                    ( App
+                        ( Var "geq" )
+                        ( Var "n" )
+                    )
+                    ( Var "m" )
+                )
+            )
+        )
+    )
+, Com "fix"
+    ( Abs "rec"
+        ( App
+            ( Abs "x"
+                ( App
+                    ( Var "rec" )
+                    ( App
+                        ( Var "x" )
+                        ( Var "x" )
+                    )
+                )
+            )
+            ( Abs "x"
+                ( App
+                    ( Var "rec" )
+                    ( App
+                        ( Var "x" )
+                        ( Var "x" )
+                    )
+                )
+            )
+        )
+    )
+, Com "Y"
+    ( Var "fix" )
+, Com "B"
+    ( Abs "x"
+        ( Abs "y"
+            ( Abs "z"
+                ( App
+                    ( Var "x" )
+                    ( App
+                        ( Var "y" )
+                        ( Var "z" )
+                    )
+                )
+            )
+        )
+    )
+, Com "C"
+    ( Abs "x"
+        ( Abs "y"
+            ( Abs "z"
+                ( App
+                    ( App
+                        ( Var "x" )
+                        ( Var "z" )
+                    )
+                    ( Var "y" )
+                )
+            )
+        )
+    )
+, Com "W"
+    ( Abs "x"
+        ( Abs "y"
+            ( App
+                ( App
+                    ( Var "x" )
+                    ( Var "y" )
+                )
+                ( Var "y" )
+            )
+        )
+    )
+, Com "ω"
+    ( Abs "x"
+        ( App
+            ( Var "x" )
+            ( Var "x" )
+        )
+    )
+, Com "Δ"
+    ( Abs "x"
+        ( App
+            ( Var "x" )
+            ( Var "x" )
+        )
+    )
+, Com "Ω"
+    ( App
+        ( Var "ω" )
+        ( Var "ω" )
+    )
+, Com "reverse"
+    ( App
+        ( App
+            ( Var "fix" )
+            ( Abs "rec"
+                ( Abs "ys"
+                    ( Abs "xs"
+                        ( App
+                            ( App
+                                ( App
+                                    ( Var "uncons" )
+                                    ( Var "xs" )
+                                )
+                                ( Abs "x"
+                                    ( Abs "xs"
+                                        ( App
+                                            ( App
+                                                ( Var "rec" )
+                                                ( App
+                                                    ( App
+                                                        ( Var "cons" )
+                                                        ( Var "x" )
+                                                    )
+                                                    ( Var "ys" )
+                                                )
+                                            )
+                                            ( Var "xs" )
+                                        )
+                                    )
+                                )
+                            )
+                            ( Var "ys" )
+                        )
+                    )
+                )
+            )
+        )
+        ( Var "nil" )
+    )
+, Com "fact"
+    ( App
+        ( Var "fix" )
+        ( Abs "rec"
+            ( Abs "n"
+                ( App
+                    ( App
+                        ( App
+                            ( Var "is0" )
+                            ( Var "n" )
+                        )
+                        ( Var "1" )
+                    )
+                    ( App
+                        ( App
+                            ( Var "mul" )
+                            ( Var "n" )
+                        )
+                        ( App
+                            ( Var "rec" )
+                            ( App
+                                ( Var "pred" )
+                                ( Var "n" )
+                            )
+                        )
+                    )
+                )
+            )
+        )
+    )
+, Com "Var"
+    ( Abs "m"
+        ( Abs "a"
+            ( Abs "b"
+                ( Abs "c"
+                    ( App
+                        ( Var "a" )
+                        ( Var "m" )
+                    )
+                )
+            )
+        )
+    )
+, Com "App"
+    ( Abs "m"
+        ( Abs "n"
+            ( Abs "a"
+                ( Abs "b"
+                    ( Abs "c"
+                        ( App
+                            ( App
+                                ( Var "b" )
+                                ( Var "m" )
+                            )
+                            ( Var "n" )
+                        )
+                    )
+                )
+            )
+        )
+    )
+, Com "Abs"
+    ( Abs "f"
+        ( Abs "a"
+            ( Abs "b"
+                ( Abs "c"
+                    ( App
+                        ( Var "c" )
+                        ( Var "f" )
+                    )
+                )
+            )
+        )
+    )
+]

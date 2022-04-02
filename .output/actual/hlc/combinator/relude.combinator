@@ -1,0 +1,1081 @@
+[ Com "false" ( App K I )
+, Com "true"
+    ( App
+        ( App S ( App K K ) ) I
+    )
+, Com "and"
+    ( App
+        ( App S
+            ( App
+                ( App S ( App K S ) )
+                ( App
+                    ( App S
+                        ( App
+                            ( App S ( App K S ) )
+                            ( App
+                                ( App S ( App K K ) ) I
+                            )
+                        )
+                    ) ( App K I )
+                )
+            )
+        )
+        ( App
+            ( App S ( App K K ) ) I
+        )
+    )
+, Com "or"
+    ( App
+        ( App S
+            ( App
+                ( App S ( App K S ) )
+                ( App
+                    ( App S
+                        ( App
+                            ( App S ( App K S ) )
+                            ( App
+                                ( App S ( App K K ) ) I
+                            )
+                        )
+                    )
+                    ( App
+                        ( App S ( App K K ) ) I
+                    )
+                )
+            )
+        ) ( App K I )
+    )
+, Com "not"
+    ( App
+        ( App S
+            ( App ( App S I )
+                ( App K
+                    ( Var "false" )
+                )
+            )
+        )
+        ( App K
+            ( Var "true" )
+        )
+    )
+, Com "nand"
+    ( App
+        ( App S
+            ( App
+                ( App S ( App K S ) )
+                ( App
+                    ( App S ( App K K ) )
+                    ( App K
+                        ( Var "not" )
+                    )
+                )
+            )
+        )
+        ( App
+            ( App S
+                ( App
+                    ( App S ( App K S ) )
+                    ( App
+                        ( App S
+                            ( App
+                                ( App S ( App K S ) )
+                                ( App
+                                    ( App S ( App K K ) )
+                                    ( App K
+                                        ( Var "and" )
+                                    )
+                                )
+                            )
+                        )
+                        ( App
+                            ( App S ( App K K ) ) I
+                        )
+                    )
+                )
+            ) ( App K I )
+        )
+    )
+, Com "nor"
+    ( App
+        ( App S
+            ( App
+                ( App S ( App K S ) )
+                ( App
+                    ( App S ( App K K ) )
+                    ( App K
+                        ( Var "not" )
+                    )
+                )
+            )
+        )
+        ( App
+            ( App S
+                ( App
+                    ( App S ( App K S ) )
+                    ( App
+                        ( App S
+                            ( App
+                                ( App S ( App K S ) )
+                                ( App
+                                    ( App S ( App K K ) )
+                                    ( App K
+                                        ( Var "or" )
+                                    )
+                                )
+                            )
+                        )
+                        ( App
+                            ( App S ( App K K ) ) I
+                        )
+                    )
+                )
+            ) ( App K I )
+        )
+    )
+, Com "if"
+    ( App
+        ( App S
+            ( App
+                ( App S ( App K S ) )
+                ( App
+                    ( App S
+                        ( App K
+                            ( App S ( App K S ) )
+                        )
+                    )
+                    ( App
+                        ( App S
+                            ( App
+                                ( App S ( App K S ) )
+                                ( App
+                                    ( App S
+                                        ( App K
+                                            ( App S ( App K S ) )
+                                        )
+                                    )
+                                    ( App
+                                        ( App S
+                                            ( App K
+                                                ( App S ( App K K ) )
+                                            )
+                                        )
+                                        ( App
+                                            ( App S ( App K K ) ) I
+                                        )
+                                    )
+                                )
+                            )
+                        )
+                        ( App K
+                            ( App
+                                ( App S ( App K K ) ) I
+                            )
+                        )
+                    )
+                )
+            )
+        )
+        ( App K ( App K I ) )
+    )
+, Com "cond"
+    ( App
+        ( App S
+            ( App
+                ( App S ( App K S ) )
+                ( App
+                    ( App S
+                        ( App K
+                            ( App S ( App K S ) )
+                        )
+                    )
+                    ( App
+                        ( App S
+                            ( App K
+                                ( App S
+                                    ( App K ( App S I ) )
+                                )
+                            )
+                        )
+                        ( App
+                            ( App S
+                                ( App K
+                                    ( App S ( App K K ) )
+                                )
+                            )
+                            ( App
+                                ( App S ( App K K ) ) I
+                            )
+                        )
+                    )
+                )
+            )
+        )
+        ( App K
+            ( App
+                ( App S ( App K K ) ) I
+            )
+        )
+    )
+, Com "car"
+    ( App ( App S I )
+        ( App K
+            ( Var "true" )
+        )
+    )
+, Com "cdr"
+    ( App ( App S I )
+        ( App K
+            ( Var "false" )
+        )
+    )
+, Com "nil"
+    ( App K
+        ( Var "true" )
+    )
+, Com "null"
+    ( App ( App S I )
+        ( App
+            ( App S
+                ( App K
+                    ( App S ( App K K ) )
+                )
+            )
+            ( App
+                ( App S ( App K K ) )
+                ( App K
+                    ( Var "false" )
+                )
+            )
+        )
+    )
+, Com "repeat"
+    ( App
+        ( App S
+            ( App
+                ( App S ( App K S ) )
+                ( App
+                    ( App S
+                        ( App
+                            ( App S ( App K S ) )
+                            ( App
+                                ( App S ( App K K ) ) I
+                            )
+                        )
+                    )
+                    ( App
+                        ( App S
+                            ( App
+                                ( App S ( App K S ) )
+                                ( App
+                                    ( App S ( App K K ) )
+                                    ( App K
+                                        ( Var "cond" )
+                                    )
+                                )
+                            )
+                        ) ( App K I )
+                    )
+                )
+            )
+        )
+        ( App
+            ( App S ( App K K ) )
+            ( App K
+                ( Var "nil" )
+            )
+        )
+    )
+, Com "succ"
+    ( App
+        ( App S
+            ( App K
+                ( App S
+                    ( App
+                        ( App S ( App K S ) )
+                        ( App
+                            ( App S ( App K K ) ) I
+                        )
+                    )
+                )
+            )
+        )
+        ( App
+            ( App S
+                ( App
+                    ( App S ( App K S ) )
+                    ( App
+                        ( App S
+                            ( App K
+                                ( App S ( App K S ) )
+                            )
+                        )
+                        ( App
+                            ( App S
+                                ( App
+                                    ( App S ( App K S ) )
+                                    ( App
+                                        ( App S
+                                            ( App K
+                                                ( App S ( App K S ) )
+                                            )
+                                        )
+                                        ( App
+                                            ( App S
+                                                ( App K
+                                                    ( App S ( App K K ) )
+                                                )
+                                            )
+                                            ( App
+                                                ( App S ( App K K ) ) I
+                                            )
+                                        )
+                                    )
+                                )
+                            )
+                            ( App K
+                                ( App
+                                    ( App S ( App K K ) ) I
+                                )
+                            )
+                        )
+                    )
+                )
+            )
+            ( App K ( App K I ) )
+        )
+    )
+, Com "plus"
+    ( App
+        ( App S
+            ( App
+                ( App S ( App K S ) )
+                ( App
+                    ( App S
+                        ( App
+                            ( App S ( App K S ) )
+                            ( App
+                                ( App S ( App K K ) ) I
+                            )
+                        )
+                    )
+                    ( App
+                        ( App S ( App K K ) )
+                        ( App K
+                            ( Var "succ" )
+                        )
+                    )
+                )
+            )
+        ) ( App K I )
+    )
+, Com "mult"
+    ( App
+        ( App S
+            ( App
+                ( App S ( App K S ) )
+                ( App
+                    ( App S
+                        ( App
+                            ( App S ( App K S ) )
+                            ( App
+                                ( App S ( App K K ) ) I
+                            )
+                        )
+                    )
+                    ( App
+                        ( App S
+                            ( App
+                                ( App S ( App K S ) )
+                                ( App
+                                    ( App S ( App K K ) )
+                                    ( App K
+                                        ( Var "plus" )
+                                    )
+                                )
+                            )
+                        ) ( App K I )
+                    )
+                )
+            )
+        )
+        ( App
+            ( App S ( App K K ) )
+            ( App K
+                ( Var "0" )
+            )
+        )
+    )
+, Com "pow"
+    ( App
+        ( App S
+            ( App K ( App S I ) )
+        )
+        ( App
+            ( App S ( App K K ) ) I
+        )
+    )
+, Com "iszero"
+    ( App
+        ( App S
+            ( App ( App S I )
+                ( App
+                    ( App S ( App K K ) )
+                    ( App K
+                        ( Var "false" )
+                    )
+                )
+            )
+        )
+        ( App K
+            ( Var "true" )
+        )
+    )
+, Com "phi"
+    ( App
+        ( App S
+            ( App
+                ( App S
+                    ( App K
+                        ( Var "cond" )
+                    )
+                )
+                ( App
+                    ( App S
+                        ( App K
+                            ( Var "cdr" )
+                        )
+                    ) I
+                )
+            )
+        )
+        ( App
+            ( App S
+                ( App K
+                    ( Var "succ" )
+                )
+            )
+            ( App
+                ( App S
+                    ( App K
+                        ( Var "cdr" )
+                    )
+                ) I
+            )
+        )
+    )
+, Com "Φ"
+    ( App
+        ( App S
+            ( App
+                ( App S
+                    ( App K
+                        ( Var "cond" )
+                    )
+                )
+                ( App
+                    ( App S
+                        ( App K
+                            ( Var "cdr" )
+                        )
+                    ) I
+                )
+            )
+        )
+        ( App
+            ( App S
+                ( App K
+                    ( Var "succ" )
+                )
+            )
+            ( App
+                ( App S
+                    ( App K
+                        ( Var "cdr" )
+                    )
+                ) I
+            )
+        )
+    )
+, Com "pred"
+    ( App
+        ( App S
+            ( App K
+                ( Var "car" )
+            )
+        )
+        ( App
+            ( App S
+                ( App ( App S I )
+                    ( App K
+                        ( Var "Φ" )
+                    )
+                )
+            )
+            ( App
+                ( App S
+                    ( App
+                        ( App S
+                            ( App K
+                                ( Var "cond" )
+                            )
+                        )
+                        ( App K
+                            ( Var "0" )
+                        )
+                    )
+                )
+                ( App K
+                    ( Var "0" )
+                )
+            )
+        )
+    )
+, Com "sub"
+    ( App
+        ( App S
+            ( App
+                ( App S ( App K S ) )
+                ( App
+                    ( App S
+                        ( App K ( App S I ) )
+                    )
+                    ( App
+                        ( App S ( App K K ) )
+                        ( App K
+                            ( Var "pred" )
+                        )
+                    )
+                )
+            )
+        )
+        ( App
+            ( App S ( App K K ) ) I
+        )
+    )
+, Com "leq"
+    ( App
+        ( App S
+            ( App
+                ( App S ( App K S ) )
+                ( App
+                    ( App S ( App K K ) )
+                    ( App K
+                        ( Var "iszero" )
+                    )
+                )
+            )
+        )
+        ( App
+            ( App S
+                ( App
+                    ( App S ( App K S ) )
+                    ( App
+                        ( App S
+                            ( App
+                                ( App S ( App K S ) )
+                                ( App
+                                    ( App S ( App K K ) )
+                                    ( App K
+                                        ( Var "sub" )
+                                    )
+                                )
+                            )
+                        )
+                        ( App
+                            ( App S ( App K K ) ) I
+                        )
+                    )
+                )
+            ) ( App K I )
+        )
+    )
+, Com "geq"
+    ( App
+        ( App S
+            ( App
+                ( App S ( App K S ) )
+                ( App
+                    ( App S
+                        ( App
+                            ( App S ( App K S ) )
+                            ( App
+                                ( App S ( App K K ) )
+                                ( App K
+                                    ( Var "leq" )
+                                )
+                            )
+                        )
+                    ) ( App K I )
+                )
+            )
+        )
+        ( App
+            ( App S ( App K K ) ) I
+        )
+    )
+, Com "eq"
+    ( App
+        ( App S
+            ( App
+                ( App S ( App K S ) )
+                ( App
+                    ( App S
+                        ( App
+                            ( App S ( App K S ) )
+                            ( App
+                                ( App S ( App K K ) )
+                                ( App K
+                                    ( Var "and" )
+                                )
+                            )
+                        )
+                    )
+                    ( App
+                        ( App S
+                            ( App
+                                ( App S ( App K S ) )
+                                ( App
+                                    ( App S
+                                        ( App
+                                            ( App S ( App K S ) )
+                                            ( App
+                                                ( App S ( App K K ) )
+                                                ( App K
+                                                    ( Var "leq" )
+                                                )
+                                            )
+                                        )
+                                    ) ( App K I )
+                                )
+                            )
+                        )
+                        ( App
+                            ( App S ( App K K ) ) I
+                        )
+                    )
+                )
+            )
+        )
+        ( App
+            ( App S
+                ( App
+                    ( App S ( App K S ) )
+                    ( App
+                        ( App S
+                            ( App
+                                ( App S ( App K S ) )
+                                ( App
+                                    ( App S ( App K K ) )
+                                    ( App K
+                                        ( Var "geq" )
+                                    )
+                                )
+                            )
+                        ) ( App K I )
+                    )
+                )
+            )
+            ( App
+                ( App S ( App K K ) ) I
+            )
+        )
+    )
+, Com "neq"
+    ( App
+        ( App S
+            ( App
+                ( App S ( App K S ) )
+                ( App
+                    ( App S
+                        ( App
+                            ( App S ( App K S ) )
+                            ( App
+                                ( App S ( App K K ) )
+                                ( App K
+                                    ( Var "nand" )
+                                )
+                            )
+                        )
+                    )
+                    ( App
+                        ( App S
+                            ( App
+                                ( App S ( App K S ) )
+                                ( App
+                                    ( App S
+                                        ( App
+                                            ( App S ( App K S ) )
+                                            ( App
+                                                ( App S ( App K K ) )
+                                                ( App K
+                                                    ( Var "leq" )
+                                                )
+                                            )
+                                        )
+                                    ) ( App K I )
+                                )
+                            )
+                        )
+                        ( App
+                            ( App S ( App K K ) ) I
+                        )
+                    )
+                )
+            )
+        )
+        ( App
+            ( App S
+                ( App
+                    ( App S ( App K S ) )
+                    ( App
+                        ( App S
+                            ( App
+                                ( App S ( App K S ) )
+                                ( App
+                                    ( App S ( App K K ) )
+                                    ( App K
+                                        ( Var "geq" )
+                                    )
+                                )
+                            )
+                        ) ( App K I )
+                    )
+                )
+            )
+            ( App
+                ( App S ( App K K ) ) I
+            )
+        )
+    )
+, Com "lt"
+    ( App
+        ( App S
+            ( App
+                ( App S ( App K S ) )
+                ( App
+                    ( App S
+                        ( App
+                            ( App S ( App K S ) )
+                            ( App
+                                ( App S ( App K K ) )
+                                ( App K
+                                    ( Var "and" )
+                                )
+                            )
+                        )
+                    )
+                    ( App
+                        ( App S
+                            ( App
+                                ( App S ( App K S ) )
+                                ( App
+                                    ( App S
+                                        ( App
+                                            ( App S ( App K S ) )
+                                            ( App
+                                                ( App S ( App K K ) )
+                                                ( App K
+                                                    ( Var "leq" )
+                                                )
+                                            )
+                                        )
+                                    ) ( App K I )
+                                )
+                            )
+                        )
+                        ( App
+                            ( App S ( App K K ) ) I
+                        )
+                    )
+                )
+            )
+        )
+        ( App
+            ( App S
+                ( App
+                    ( App S ( App K S ) )
+                    ( App
+                        ( App S ( App K K ) )
+                        ( App K
+                            ( Var "not" )
+                        )
+                    )
+                )
+            )
+            ( App
+                ( App S
+                    ( App
+                        ( App S ( App K S ) )
+                        ( App
+                            ( App S
+                                ( App
+                                    ( App S ( App K S ) )
+                                    ( App
+                                        ( App S ( App K K ) )
+                                        ( App K
+                                            ( Var "geq" )
+                                        )
+                                    )
+                                )
+                            ) ( App K I )
+                        )
+                    )
+                )
+                ( App
+                    ( App S ( App K K ) ) I
+                )
+            )
+        )
+    )
+, Com "gt"
+    ( App
+        ( App S
+            ( App
+                ( App S ( App K S ) )
+                ( App
+                    ( App S
+                        ( App
+                            ( App S ( App K S ) )
+                            ( App
+                                ( App S ( App K K ) )
+                                ( App K
+                                    ( Var "and" )
+                                )
+                            )
+                        )
+                    )
+                    ( App
+                        ( App S
+                            ( App
+                                ( App S ( App K S ) )
+                                ( App
+                                    ( App S ( App K K ) )
+                                    ( App K
+                                        ( Var "not" )
+                                    )
+                                )
+                            )
+                        )
+                        ( App
+                            ( App S
+                                ( App
+                                    ( App S ( App K S ) )
+                                    ( App
+                                        ( App S
+                                            ( App
+                                                ( App S ( App K S ) )
+                                                ( App
+                                                    ( App S ( App K K ) )
+                                                    ( App K
+                                                        ( Var "leq" )
+                                                    )
+                                                )
+                                            )
+                                        ) ( App K I )
+                                    )
+                                )
+                            )
+                            ( App
+                                ( App S ( App K K ) ) I
+                            )
+                        )
+                    )
+                )
+            )
+        )
+        ( App
+            ( App S
+                ( App
+                    ( App S ( App K S ) )
+                    ( App
+                        ( App S
+                            ( App
+                                ( App S ( App K S ) )
+                                ( App
+                                    ( App S ( App K K ) )
+                                    ( App K
+                                        ( Var "geq" )
+                                    )
+                                )
+                            )
+                        ) ( App K I )
+                    )
+                )
+            )
+            ( App
+                ( App S ( App K K ) ) I
+            )
+        )
+    )
+, Com "fix"
+    ( App
+        ( App S
+            ( App
+                ( App S
+                    ( App
+                        ( App S ( App K S ) )
+                        ( App
+                            ( App S ( App K K ) ) I
+                        )
+                    )
+                )
+                ( App K
+                    ( App ( App S I ) I )
+                )
+            )
+        )
+        ( App
+            ( App S
+                ( App
+                    ( App S ( App K S ) )
+                    ( App
+                        ( App S ( App K K ) ) I
+                    )
+                )
+            )
+            ( App K
+                ( App ( App S I ) I )
+            )
+        )
+    )
+, Com "Y"
+    ( App
+        ( App S
+            ( App
+                ( App S
+                    ( App
+                        ( App S ( App K S ) )
+                        ( App
+                            ( App S ( App K K ) ) I
+                        )
+                    )
+                )
+                ( App K
+                    ( App ( App S I ) I )
+                )
+            )
+        )
+        ( App
+            ( App S
+                ( App
+                    ( App S ( App K S ) )
+                    ( App
+                        ( App S ( App K K ) ) I
+                    )
+                )
+            )
+            ( App K
+                ( App ( App S I ) I )
+            )
+        )
+    )
+, Com "B"
+    ( App
+        ( App S
+            ( App
+                ( App S ( App K S ) )
+                ( App
+                    ( App S
+                        ( App K
+                            ( App S ( App K S ) )
+                        )
+                    )
+                    ( App
+                        ( App S
+                            ( App K
+                                ( App S ( App K K ) )
+                            )
+                        )
+                        ( App
+                            ( App S ( App K K ) ) I
+                        )
+                    )
+                )
+            )
+        )
+        ( App K
+            ( App
+                ( App S
+                    ( App
+                        ( App S ( App K S ) )
+                        ( App
+                            ( App S ( App K K ) ) I
+                        )
+                    )
+                ) ( App K I )
+            )
+        )
+    )
+, Com "C"
+    ( App
+        ( App S
+            ( App
+                ( App S ( App K S ) )
+                ( App
+                    ( App S
+                        ( App K
+                            ( App S ( App K S ) )
+                        )
+                    )
+                    ( App
+                        ( App S
+                            ( App
+                                ( App S ( App K S ) )
+                                ( App
+                                    ( App S
+                                        ( App K
+                                            ( App S ( App K S ) )
+                                        )
+                                    )
+                                    ( App
+                                        ( App S
+                                            ( App K
+                                                ( App S ( App K K ) )
+                                            )
+                                        )
+                                        ( App
+                                            ( App S ( App K K ) ) I
+                                        )
+                                    )
+                                )
+                            )
+                        )
+                        ( App K ( App K I ) )
+                    )
+                )
+            )
+        )
+        ( App K
+            ( App
+                ( App S ( App K K ) ) I
+            )
+        )
+    )
+, Com "W"
+    ( App
+        ( App S
+            ( App
+                ( App S ( App K S ) )
+                ( App
+                    ( App S
+                        ( App
+                            ( App S ( App K S ) )
+                            ( App
+                                ( App S ( App K K ) ) I
+                            )
+                        )
+                    ) ( App K I )
+                )
+            )
+        ) ( App K I )
+    )
+, Com "ω"
+    ( App ( App S I ) I )
+, Com "Δ"
+    ( App ( App S I ) I )
+, Com "Ω"
+    ( App
+        ( Var "ω" )
+        ( Var "ω" )
+    )
+]

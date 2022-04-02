@@ -21,7 +21,7 @@ lambdaParser :: Parser Lambda
 lambdaParser = defineCombinatorParser <|> functionParser <|> applicationParser
 
 defineCombinatorParser :: Parser Lambda
-defineCombinatorParser = liftA2 Com ((vertical *> identifierParser <* define) <?> "define combinator") lambdaParser
+defineCombinatorParser = liftA2 Com ((hash *> identifierParser <* define) <?> "define combinator") lambdaParser
 
 functionParser :: Parser Lambda
 functionParser = liftA2 Abs ((lambda *> identifierParser <* dot) <?> "function") lambdaParser

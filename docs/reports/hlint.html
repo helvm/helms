@@ -161,12 +161,12 @@ document.body.className = "script";
 
 <p><a class="all" href="javascript:show('')">All hints</a></p>
 <ul>
-<li><a id="hint0" href="javascript:show('hint0')">Warning: Redundant do (2)</a></li>
+<li><a id="hint0" href="javascript:show('hint0')">Warning: Redundant do (1)</a></li>
 </ul>
 
 <p><a class="all" href="javascript:show('')">All files</a></p>
 <ul>
-<li><a id="file0" href="javascript:show('file0')">./hs/test/HelVM/HelMS/Calculus/Parsers/WikiParserSpec.hs (2)</a></li>
+<li><a id="file0" href="javascript:show('file0')">./hs/test/HelVM/HelMS/Calculus/Parsers/WikiParserSpec.hs (1)</a></li>
 </ul>
 
 </div>
@@ -183,25 +183,18 @@ Found<br/>
 <pre><span class='hs-keyword'>do</span> <span class='hs-varid'>describe</span> <span class='hs-str'>"unit"</span> <span class='hs-varop'>$</span>
      <span class='hs-keyword'>do</span> <span class='hs-varid'>it</span> <span class='hs-str'>"\955x.\955y.y"</span> <span class='hs-varop'>$</span>
           <span class='hs-varid'>parseLineCalculus</span> <span class='hs-str'>""</span> <span class='hs-str'>"\955x.\955y.y"</span> <span class='hs-varop'>`shouldParse`</span>
-            <span class='hs-conid'>Abs</span> <span class='hs-str'>"x"</span> <span class='hs-layout'>(</span><span class='hs-conid'>Abs</span> <span class='hs-str'>"y"</span> <span class='hs-layout'>(</span><span class='hs-conid'>Var</span> <span class='hs-str'>"y"</span><span class='hs-layout'>)</span><span class='hs-layout'>)</span></pre>
+            <span class='hs-conid'>Abs</span> <span class='hs-str'>"x"</span> <span class='hs-layout'>(</span><span class='hs-conid'>Abs</span> <span class='hs-str'>"y"</span> <span class='hs-layout'>(</span><span class='hs-conid'>Var</span> <span class='hs-str'>"y"</span><span class='hs-layout'>)</span><span class='hs-layout'>)</span>
+        <span class='hs-varid'>it</span> <span class='hs-str'>"# FALSE := \955x.\955y.y"</span> <span class='hs-varop'>$</span>
+          <span class='hs-varid'>parseLineCalculus</span> <span class='hs-str'>""</span> <span class='hs-str'>"# FALSE := \955x.\955y.y"</span> <span class='hs-varop'>`shouldParse`</span>
+            <span class='hs-conid'>Com</span> <span class='hs-str'>"FALSE"</span> <span class='hs-layout'>(</span><span class='hs-conid'>Abs</span> <span class='hs-str'>"x"</span> <span class='hs-layout'>(</span><span class='hs-conid'>Abs</span> <span class='hs-str'>"y"</span> <span class='hs-layout'>(</span><span class='hs-conid'>Var</span> <span class='hs-str'>"y"</span><span class='hs-layout'>)</span><span class='hs-layout'>)</span><span class='hs-layout'>)</span></pre>
 Perhaps<br/>
 <pre><span class='hs-definition'>describe</span> <span class='hs-str'>"unit"</span> <span class='hs-varop'>$</span>
   <span class='hs-keyword'>do</span> <span class='hs-varid'>it</span> <span class='hs-str'>"\955x.\955y.y"</span> <span class='hs-varop'>$</span>
        <span class='hs-varid'>parseLineCalculus</span> <span class='hs-str'>""</span> <span class='hs-str'>"\955x.\955y.y"</span> <span class='hs-varop'>`shouldParse`</span>
-         <span class='hs-conid'>Abs</span> <span class='hs-str'>"x"</span> <span class='hs-layout'>(</span><span class='hs-conid'>Abs</span> <span class='hs-str'>"y"</span> <span class='hs-layout'>(</span><span class='hs-conid'>Var</span> <span class='hs-str'>"y"</span><span class='hs-layout'>)</span><span class='hs-layout'>)</span></pre>
-
-</div>
-
-<div class="hint0 file0">
-./hs/test/HelVM/HelMS/Calculus/Parsers/WikiParserSpec.hs:31:21: Warning: Redundant do<br/>
-Found<br/>
-<pre><span class='hs-keyword'>do</span> <span class='hs-varid'>it</span> <span class='hs-str'>"\955x.\955y.y"</span> <span class='hs-varop'>$</span>
-     <span class='hs-varid'>parseLineCalculus</span> <span class='hs-str'>""</span> <span class='hs-str'>"\955x.\955y.y"</span> <span class='hs-varop'>`shouldParse`</span>
-       <span class='hs-conid'>Abs</span> <span class='hs-str'>"x"</span> <span class='hs-layout'>(</span><span class='hs-conid'>Abs</span> <span class='hs-str'>"y"</span> <span class='hs-layout'>(</span><span class='hs-conid'>Var</span> <span class='hs-str'>"y"</span><span class='hs-layout'>)</span><span class='hs-layout'>)</span></pre>
-Perhaps<br/>
-<pre><span class='hs-definition'>it</span> <span class='hs-str'>"\955x.\955y.y"</span> <span class='hs-varop'>$</span>
-  <span class='hs-varid'>parseLineCalculus</span> <span class='hs-str'>""</span> <span class='hs-str'>"\955x.\955y.y"</span> <span class='hs-varop'>`shouldParse`</span>
-    <span class='hs-conid'>Abs</span> <span class='hs-str'>"x"</span> <span class='hs-layout'>(</span><span class='hs-conid'>Abs</span> <span class='hs-str'>"y"</span> <span class='hs-layout'>(</span><span class='hs-conid'>Var</span> <span class='hs-str'>"y"</span><span class='hs-layout'>)</span><span class='hs-layout'>)</span></pre>
+         <span class='hs-conid'>Abs</span> <span class='hs-str'>"x"</span> <span class='hs-layout'>(</span><span class='hs-conid'>Abs</span> <span class='hs-str'>"y"</span> <span class='hs-layout'>(</span><span class='hs-conid'>Var</span> <span class='hs-str'>"y"</span><span class='hs-layout'>)</span><span class='hs-layout'>)</span>
+     <span class='hs-varid'>it</span> <span class='hs-str'>"# FALSE := \955x.\955y.y"</span> <span class='hs-varop'>$</span>
+       <span class='hs-varid'>parseLineCalculus</span> <span class='hs-str'>""</span> <span class='hs-str'>"# FALSE := \955x.\955y.y"</span> <span class='hs-varop'>`shouldParse`</span>
+         <span class='hs-conid'>Com</span> <span class='hs-str'>"FALSE"</span> <span class='hs-layout'>(</span><span class='hs-conid'>Abs</span> <span class='hs-str'>"x"</span> <span class='hs-layout'>(</span><span class='hs-conid'>Abs</span> <span class='hs-str'>"y"</span> <span class='hs-layout'>(</span><span class='hs-conid'>Var</span> <span class='hs-str'>"y"</span><span class='hs-layout'>)</span><span class='hs-layout'>)</span><span class='hs-layout'>)</span></pre>
 
 </div>
 

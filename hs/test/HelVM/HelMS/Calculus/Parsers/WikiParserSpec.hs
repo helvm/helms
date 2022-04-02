@@ -30,7 +30,7 @@ spec = describe "parse" $ do
 
   describe "unit" $ do
     it "λx.λy.y"            $ parseLineCalculus "" "λx.λy.y" `shouldParse` Abs "x" (Abs "y" (Var "y"))
---    it "| FALSE := λx.λy.y" $ parseLineCalculus "" "| FALSE := λx.λy.y" `shouldParse` Com "FALSE" (Abs "x" (Abs "y" (Var "y")))
+    it "# FALSE := λx.λy.y" $ parseLineCalculus "" "# FALSE := λx.λy.y" `shouldParse` Com "FALSE" (Abs "x" (Abs "y" (Var "y")))
 
 parseFileSafe :: FilePath -> IO LambdaList
 parseFileSafe filePath = safeIOToIO $ parseTextSafe filePath <$> readHlcFile filePath

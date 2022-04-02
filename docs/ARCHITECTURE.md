@@ -43,7 +43,7 @@ Tools and libraries:
   * [ ] [validation-selective](https://github.com/kowainik/validation-selective) is lighweight pure data validation based on Applicative and Selective functors
   * [x] [filepath](https://github.com/haskell/filepath#readme) for manipulating FilePaths in a cross platform way.
   * [x] [pretty-simple](https://github.com/cdepillabout/pretty-simple) for data types with a 'Show' instance
-  * [ ] [megaparsec](https://github.com/mrkkrp/megaparsec) for parsing languages
+  * [x] [megaparsec](https://github.com/mrkkrp/megaparsec) for parsing languages
   * [x] [repline](https://github.com/sdiehl/repline) for REPL
 
 ## 🌈 ❤️ 💛 💚 💙 🤍 🖤 🦄

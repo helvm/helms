@@ -1,7 +1,7 @@
 cabal-version:         2.4
 
 name:                  helms
-version:               0.1.0.0
+version:               0.1.1.0
 
 synopsis:              HELPA - Heavenly Esoteric Meta Schemer for Esoteric Languages
 description:           Please see the README on GitHub at <https://github.com/helvm/helms#readme>

@@ -1,31 +1,31 @@
 ; Constants
-: ID := \x.x
-: TRUE := λx.λy.x
-: FALSE := λx.λy.y
+| ID := \x.x
+| TRUE := λx.λy.x
+| FALSE := λx.λy.y
 
 ; Logic
-: AND := λp.λq.p q p
-: OR := λp.λq.p p q
-: NOT := λp.p FALSE TRUE
-: IFTHENELSE := λp.λa.λb.p a b
+| AND := λp.λq.p q p
+| OR := λp.λq.p p q
+| NOT := λp.p FALSE TRUE
+| IFTHENELSE := λp.λa.λb.p a b
 
 ; Pair
-: PAIR := λx.λy.λf.f x y
-: FIRST := λp.p TRUE
-: SECOND := λp.p FALSE
+| PAIR := λx.λy.λf.f x y
+| FIRST := λp.p TRUE
+| SECOND := λp.p FALSE
 
 ; List
-: NIL := λx.TRUE
-: NULL := λp.p (λx.λy.FALSE)
-: REPEAT := λn.λx.n (PAIR x) NIL
+| NIL := λx.TRUE
+| NULL := λp.p (λx.λy.FALSE)
+| REPEAT := λn.λx.n (PAIR x) NIL
 
 ; Arithmetic - succ
-: SUCC := λn.λf.λx.f (n f x)
+| SUCC := λn.λf.λx.f (n f x)
 ; PLUS := λm.λn.λf.λx.m f (n f x)
-: PLUS := λm.λn.m SUCC n
+| PLUS := λm.λn.m SUCC n
 ; MULT := λm.λn.λf.m (n f)
-: MULT := λm.λn.m (PLUS n) 0
-: POW := λb.λe.e b
+| MULT := λm.λn.m (PLUS n) 0
+| POW := λb.λe.e b
 
 ; Natural numbers
 ; 0 := λf.λx.x
@@ -39,15 +39,15 @@
 ; 3 := λfx.f (f (f x))
 
 ; Arithmetic - pred
-: ISZERO := λn.n (λx.FALSE) TRUE
-: Φ := λx.PAIR (SECOND x) (SUCC (SECOND x))
-: PHI = Φ
+| ISZERO := λn.n (λx.FALSE) TRUE
+| Φ := λx.PAIR (SECOND x) (SUCC (SECOND x))
+| PHI = Φ
 ; PRED := λn.λf.λx.n (λg.λh.h (g f)) (λu.x) (λu.u)
 ; PRED := λn.n (λg.λk.ISZERO (g 1) k (PLUS (g k) 1)) (λv.0) 0
-: PRED := λn.FIRST (n Φ (PAIR 0 0))
-: SUB := λm.λn.n PRED m
+| PRED := λn.FIRST (n Φ (PAIR 0 0))
+| SUB := λm.λn.n PRED m
 
 ; Compare
-: LEQ := λm.λn.ISZERO (SUB m n)
+| LEQ := λm.λn.ISZERO (SUB m n)
 
 ; Other

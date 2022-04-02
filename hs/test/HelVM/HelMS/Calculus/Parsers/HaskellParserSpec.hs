@@ -6,9 +6,8 @@ import           HelVM.HelMS.Calculus.Parsers.HaskellParser
 import           HelVM.HelMS.Calculus.Reducers.AbstractionReducer
 import           HelVM.HelMS.Calculus.Reducers.DefinedCombinatorReducer
 
-import           HelVM.HelMS.Calculus.Reducer
-
 import           HelVM.HelMS.Calculus.Lambda
+import           HelVM.HelMS.Calculus.Reducer
 
 import           HelVM.Common.Control.Safe
 import           HelVM.Common.Util
@@ -22,11 +21,8 @@ import           Test.Hspec.Megaparsec
 import           Text.Megaparsec
 
 spec :: Spec
-spec = describe "parseCalculus" $ do
---describe "assembly" $ forM_
-
-
-  describe "parse" $ forM_
+spec = describe "parse" $ do
+  describe "golden" $ forM_
     [ "false"
     , "mult"
     , "logic"

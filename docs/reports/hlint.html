@@ -161,12 +161,12 @@ document.body.className = "script";
 
 <p><a class="all" href="javascript:show('')">All hints</a></p>
 <ul>
-<li><a id="hint0" href="javascript:show('hint0')">Warning: Redundant do (1)</a></li>
+<li><a id="hint0" href="javascript:show('hint0')">Warning: Use &#39;foldl&#39;&#39; from Relude (1)</a></li>
 </ul>
 
 <p><a class="all" href="javascript:show('')">All files</a></p>
 <ul>
-<li><a id="file0" href="javascript:show('file0')">./hs/test/HelVM/HelMS/Calculus/Parsers/WikiParserSpec.hs (1)</a></li>
+<li><a id="file0" href="javascript:show('file0')">./hs/src/HelVM/HelMS/Calculus/Parsers/WikiParser.hs (1)</a></li>
 </ul>
 
 </div>
@@ -178,24 +178,12 @@ v2.1.11
 </p>
 
 <div class="hint0 file0">
-./hs/test/HelVM/HelMS/Calculus/Parsers/WikiParserSpec.hs:23:27: Warning: Redundant do<br/>
+./hs/src/HelVM/HelMS/Calculus/Parsers/WikiParser.hs:47:22: Warning: Use &#39;foldl&#39;&#39; from Relude<br/>
 Found<br/>
-<pre><span class='hs-keyword'>do</span> <span class='hs-varid'>describe</span> <span class='hs-str'>"unit"</span> <span class='hs-varop'>$</span>
-     <span class='hs-keyword'>do</span> <span class='hs-varid'>it</span> <span class='hs-str'>"\955x.\955y.y"</span> <span class='hs-varop'>$</span>
-          <span class='hs-varid'>parseLineCalculus</span> <span class='hs-str'>""</span> <span class='hs-str'>"\955x.\955y.y"</span> <span class='hs-varop'>`shouldParse`</span>
-            <span class='hs-conid'>Abs</span> <span class='hs-str'>"x"</span> <span class='hs-layout'>(</span><span class='hs-conid'>Abs</span> <span class='hs-str'>"y"</span> <span class='hs-layout'>(</span><span class='hs-conid'>Var</span> <span class='hs-str'>"y"</span><span class='hs-layout'>)</span><span class='hs-layout'>)</span>
-        <span class='hs-varid'>it</span> <span class='hs-str'>"# FALSE := \955x.\955y.y"</span> <span class='hs-varop'>$</span>
-          <span class='hs-varid'>parseLineCalculus</span> <span class='hs-str'>""</span> <span class='hs-str'>"# FALSE := \955x.\955y.y"</span> <span class='hs-varop'>`shouldParse`</span>
-            <span class='hs-conid'>Com</span> <span class='hs-str'>"FALSE"</span> <span class='hs-layout'>(</span><span class='hs-conid'>Abs</span> <span class='hs-str'>"x"</span> <span class='hs-layout'>(</span><span class='hs-conid'>Abs</span> <span class='hs-str'>"y"</span> <span class='hs-layout'>(</span><span class='hs-conid'>Var</span> <span class='hs-str'>"y"</span><span class='hs-layout'>)</span><span class='hs-layout'>)</span><span class='hs-layout'>)</span></pre>
+<pre><span class='hs-definition'>foldl'</span></pre>
 Perhaps<br/>
-<pre><span class='hs-definition'>describe</span> <span class='hs-str'>"unit"</span> <span class='hs-varop'>$</span>
-  <span class='hs-keyword'>do</span> <span class='hs-varid'>it</span> <span class='hs-str'>"\955x.\955y.y"</span> <span class='hs-varop'>$</span>
-       <span class='hs-varid'>parseLineCalculus</span> <span class='hs-str'>""</span> <span class='hs-str'>"\955x.\955y.y"</span> <span class='hs-varop'>`shouldParse`</span>
-         <span class='hs-conid'>Abs</span> <span class='hs-str'>"x"</span> <span class='hs-layout'>(</span><span class='hs-conid'>Abs</span> <span class='hs-str'>"y"</span> <span class='hs-layout'>(</span><span class='hs-conid'>Var</span> <span class='hs-str'>"y"</span><span class='hs-layout'>)</span><span class='hs-layout'>)</span>
-     <span class='hs-varid'>it</span> <span class='hs-str'>"# FALSE := \955x.\955y.y"</span> <span class='hs-varop'>$</span>
-       <span class='hs-varid'>parseLineCalculus</span> <span class='hs-str'>""</span> <span class='hs-str'>"# FALSE := \955x.\955y.y"</span> <span class='hs-varop'>`shouldParse`</span>
-         <span class='hs-conid'>Com</span> <span class='hs-str'>"FALSE"</span> <span class='hs-layout'>(</span><span class='hs-conid'>Abs</span> <span class='hs-str'>"x"</span> <span class='hs-layout'>(</span><span class='hs-conid'>Abs</span> <span class='hs-str'>"y"</span> <span class='hs-layout'>(</span><span class='hs-conid'>Var</span> <span class='hs-str'>"y"</span><span class='hs-layout'>)</span><span class='hs-layout'>)</span><span class='hs-layout'>)</span></pre>
-
+<pre><span class='hs-definition'>foldl'</span></pre>
+<span class='note'>Note: &#39;foldl&#39;&#39; is already exported from Relude</span>
 </div>
 
 </div>

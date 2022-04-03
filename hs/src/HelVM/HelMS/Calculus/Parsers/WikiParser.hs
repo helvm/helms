@@ -6,8 +6,6 @@ module HelVM.HelMS.Calculus.Parsers.WikiParser (
 import           HelVM.HelMS.Calculus.Lambda
 import           HelVM.HelMS.Calculus.Lexer
 
-import           Data.Foldable
-
 import           Text.Megaparsec             hiding (many, some)
 import           Text.Megaparsec.Char
 

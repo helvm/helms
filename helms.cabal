@@ -130,6 +130,7 @@ library
     HelVM.Common.ZipA
 
     HelVM.HelMS.Calculus.Parsers.HaskellParser
+    HelVM.HelMS.Calculus.Parsers.Parser
     HelVM.HelMS.Calculus.Parsers.WikiParser
 
     HelVM.HelMS.Calculus.Reducers.AbstractionReducer

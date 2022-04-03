@@ -1,0 +1,111 @@
+[ Com "Y"
+    ( Abs "f"
+        ( App
+            ( Abs "x"
+                ( App
+                    ( Var "f" )
+                    ( App
+                        ( Var "x" )
+                        ( Var "x" )
+                    )
+                )
+            )
+            ( Abs "x"
+                ( App
+                    ( Var "f" )
+                    ( App
+                        ( Var "x" )
+                        ( Var "x" )
+                    )
+                )
+            )
+        )
+    )
+, Com "cons"
+    ( Abs "a"
+        ( Abs "b"
+            ( Abs "f"
+                ( App
+                    ( App
+                        ( Var "f" )
+                        ( Var "a" )
+                    )
+                    ( Var "b" )
+                )
+            )
+        )
+    )
+, Com "nil"
+    ( Abs "x"
+        ( Abs "y"
+            ( Var "y" )
+        )
+    )
+, Com "uncons"
+    ( Abs "xs"
+        ( Abs "f"
+            ( Abs "z"
+                ( App
+                    ( App
+                        ( Var "xs" )
+                        ( Abs "a"
+                            ( Abs "b"
+                                ( Abs "_"
+                                    ( App
+                                        ( App
+                                            ( Var "f" )
+                                            ( Var "a" )
+                                        )
+                                        ( Var "b" )
+                                    )
+                                )
+                            )
+                        )
+                    )
+                    ( Var "z" )
+                )
+            )
+        )
+    )
+, Com "reverse"
+    ( App
+        ( App
+            ( Var "Y" )
+            ( Abs "c"
+                ( Abs "ys"
+                    ( Abs "xs"
+                        ( App
+                            ( App
+                                ( App
+                                    ( Var "uncons" )
+                                    ( Var "xs" )
+                                )
+                                ( Abs "x"
+                                    ( Abs "xs"
+                                        ( App
+                                            ( App
+                                                ( Var "c" )
+                                                ( App
+                                                    ( App
+                                                        ( Var "cons" )
+                                                        ( Var "x" )
+                                                    )
+                                                    ( Var "ys" )
+                                                )
+                                            )
+                                            ( Var "xs" )
+                                        )
+                                    )
+                                )
+                            )
+                            ( Var "ys" )
+                        )
+                    )
+                )
+            )
+        )
+        ( Var "nil" )
+    )
+, Com "main"
+    ( Var "reverse" )
+]

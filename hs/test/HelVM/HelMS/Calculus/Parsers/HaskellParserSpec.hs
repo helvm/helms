@@ -23,8 +23,7 @@ import           Text.Megaparsec
 spec :: Spec
 spec = describe "parse" $ do
   describe "golden" $ forM_
-    [ "prelude"
-    , "reverse"
+    [ "wiki"
     ] $ \name -> do
     it ("abstraction"  </> name) $ showP <$> parseFileSafe name `goldenShouldIO` buildAbsoluteAbstractionFileName "hlc" name
     it ("combinator"   </> name) $ showP <$> (reduceAbstractions <$> parseFileSafe name) `goldenShouldIO` buildAbsoluteCombinatorFileName "hlc" name

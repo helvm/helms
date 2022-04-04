@@ -1,0 +1,13 @@
+; Based on https://crypto.stanford.edu/~blynn/lambda/
+
+: true  \x . \y . x
+: false \x . \y . y
+; 0     \f . \x . x
+; 1     \f . \x . f x
+: succ  \n . \f . \x . f (n f x)
+: pred  \n . \f . \x . n (\g . \h . h (g f)) (\u . x) (\u .u)
+: mul   \m . \n . \f . m (n f)
+: is0   \n . n (\x . false) true
+: Y     \f . (\x . x x)(\x . f (x x))
+: fact  Y (\f . \n . (is0 n) 1 (mul n (f (pred n))))
+fact (succ (succ (succ 1))); Compute 4!

@@ -1,0 +1,6 @@
+; Based on https://crypto.stanford.edu/~blynn/lambda/
+
+; 2   \f . \x . f (f x)
+; 3   \f . \x . f (f (f x))
+: exp \m . \n . n m
+exp 2 3; Compute 2^3.

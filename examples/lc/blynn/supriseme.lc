@@ -1,0 +1,12 @@
+; Based on https://crypto.stanford.edu/~blynn/lambda/
+
+; See Mogensen, "Efficient Self-Interpretation in Lambda Calculus".
+: Y    \f.(\x.f(x x))(\x.f(x x))
+: E    Y(\e m.m (\x.x) (\m n.(e m)(e n)) (\m v.e (m v)))
+: P    Y(\p m.(\x.x(\v.p(\a b c.b m(v (\a b.b))))m))
+: RR   Y(\r m.m (\x.x) (\m n.(r m) (\a b.a) (r n)) (\m.(\g x.x g(\a b c.c(\w.g(P (\a b c.a w))(\a b.b)))) (\v.r(m v))))
+: R    \m.RR m (\a b.b)
+: 1    \f x.f x
+: succ \n f x.f(n f x)
+E (quote (succ (succ (succ 1)))); Self-interpreter demo.
+R (quote (succ (succ (succ 1)))); Self-reducer demo.

@@ -1,0 +1,488 @@
+[ Com "ID" I
+, Com "TRUE"
+    ( App
+        ( App S ( App K K ) ) I
+    )
+, Com "FALSE" ( App K I )
+, Com "AND"
+    ( App
+        ( App S
+            ( App
+                ( App S ( App K S ) )
+                ( App
+                    ( App S
+                        ( App
+                            ( App S ( App K S ) )
+                            ( App
+                                ( App S ( App K K ) ) I
+                            )
+                        )
+                    ) ( App K I )
+                )
+            )
+        )
+        ( App
+            ( App S ( App K K ) ) I
+        )
+    )
+, Com "OR"
+    ( App
+        ( App S
+            ( App
+                ( App S ( App K S ) )
+                ( App
+                    ( App S
+                        ( App
+                            ( App S ( App K S ) )
+                            ( App
+                                ( App S ( App K K ) ) I
+                            )
+                        )
+                    )
+                    ( App
+                        ( App S ( App K K ) ) I
+                    )
+                )
+            )
+        ) ( App K I )
+    )
+, Com "NOT"
+    ( App
+        ( App S
+            ( App ( App S I )
+                ( App K
+                    ( Var "FALSE" )
+                )
+            )
+        )
+        ( App K
+            ( Var "TRUE" )
+        )
+    )
+, Com "IFTHENELSE"
+    ( App
+        ( App S
+            ( App
+                ( App S ( App K S ) )
+                ( App
+                    ( App S
+                        ( App K
+                            ( App S ( App K S ) )
+                        )
+                    )
+                    ( App
+                        ( App S
+                            ( App
+                                ( App S ( App K S ) )
+                                ( App
+                                    ( App S
+                                        ( App K
+                                            ( App S ( App K S ) )
+                                        )
+                                    )
+                                    ( App
+                                        ( App S
+                                            ( App K
+                                                ( App S ( App K K ) )
+                                            )
+                                        )
+                                        ( App
+                                            ( App S ( App K K ) ) I
+                                        )
+                                    )
+                                )
+                            )
+                        )
+                        ( App K
+                            ( App
+                                ( App S ( App K K ) ) I
+                            )
+                        )
+                    )
+                )
+            )
+        )
+        ( App K ( App K I ) )
+    )
+, Com "PAIR"
+    ( App
+        ( App S
+            ( App
+                ( App S ( App K S ) )
+                ( App
+                    ( App S
+                        ( App K
+                            ( App S ( App K S ) )
+                        )
+                    )
+                    ( App
+                        ( App S
+                            ( App K
+                                ( App S
+                                    ( App K ( App S I ) )
+                                )
+                            )
+                        )
+                        ( App
+                            ( App S
+                                ( App K
+                                    ( App S ( App K K ) )
+                                )
+                            )
+                            ( App
+                                ( App S ( App K K ) ) I
+                            )
+                        )
+                    )
+                )
+            )
+        )
+        ( App K
+            ( App
+                ( App S ( App K K ) ) I
+            )
+        )
+    )
+, Com "FIRST"
+    ( App ( App S I )
+        ( App K
+            ( Var "TRUE" )
+        )
+    )
+, Com "SECOND"
+    ( App ( App S I )
+        ( App K
+            ( Var "FALSE" )
+        )
+    )
+, Com "NIL"
+    ( App K
+        ( Var "TRUE" )
+    )
+, Com "NULL"
+    ( App ( App S I )
+        ( App
+            ( App S
+                ( App K
+                    ( App S ( App K K ) )
+                )
+            )
+            ( App
+                ( App S ( App K K ) )
+                ( App K
+                    ( Var "FALSE" )
+                )
+            )
+        )
+    )
+, Com "REPEAT"
+    ( App
+        ( App S
+            ( App
+                ( App S ( App K S ) )
+                ( App
+                    ( App S
+                        ( App
+                            ( App S ( App K S ) )
+                            ( App
+                                ( App S ( App K K ) ) I
+                            )
+                        )
+                    )
+                    ( App
+                        ( App S
+                            ( App
+                                ( App S ( App K S ) )
+                                ( App
+                                    ( App S ( App K K ) )
+                                    ( App K
+                                        ( Var "PAIR" )
+                                    )
+                                )
+                            )
+                        ) ( App K I )
+                    )
+                )
+            )
+        )
+        ( App
+            ( App S ( App K K ) )
+            ( App K
+                ( Var "NIL" )
+            )
+        )
+    )
+, Com "SUCC"
+    ( App
+        ( App S
+            ( App K
+                ( App S
+                    ( App
+                        ( App S ( App K S ) )
+                        ( App
+                            ( App S ( App K K ) ) I
+                        )
+                    )
+                )
+            )
+        )
+        ( App
+            ( App S
+                ( App
+                    ( App S ( App K S ) )
+                    ( App
+                        ( App S
+                            ( App K
+                                ( App S ( App K S ) )
+                            )
+                        )
+                        ( App
+                            ( App S
+                                ( App
+                                    ( App S ( App K S ) )
+                                    ( App
+                                        ( App S
+                                            ( App K
+                                                ( App S ( App K S ) )
+                                            )
+                                        )
+                                        ( App
+                                            ( App S
+                                                ( App K
+                                                    ( App S ( App K K ) )
+                                                )
+                                            )
+                                            ( App
+                                                ( App S ( App K K ) ) I
+                                            )
+                                        )
+                                    )
+                                )
+                            )
+                            ( App K
+                                ( App
+                                    ( App S ( App K K ) ) I
+                                )
+                            )
+                        )
+                    )
+                )
+            )
+            ( App K ( App K I ) )
+        )
+    )
+, Com "PLUS"
+    ( App
+        ( App S
+            ( App
+                ( App S ( App K S ) )
+                ( App
+                    ( App S
+                        ( App
+                            ( App S ( App K S ) )
+                            ( App
+                                ( App S ( App K K ) ) I
+                            )
+                        )
+                    )
+                    ( App
+                        ( App S ( App K K ) )
+                        ( App K
+                            ( Var "SUCC" )
+                        )
+                    )
+                )
+            )
+        ) ( App K I )
+    )
+, Com "MULT"
+    ( App
+        ( App S
+            ( App
+                ( App S ( App K S ) )
+                ( App
+                    ( App S
+                        ( App
+                            ( App S ( App K S ) )
+                            ( App
+                                ( App S ( App K K ) ) I
+                            )
+                        )
+                    )
+                    ( App
+                        ( App S
+                            ( App
+                                ( App S ( App K S ) )
+                                ( App
+                                    ( App S ( App K K ) )
+                                    ( App K
+                                        ( Var "PLUS" )
+                                    )
+                                )
+                            )
+                        ) ( App K I )
+                    )
+                )
+            )
+        )
+        ( App
+            ( App S ( App K K ) )
+            ( App K
+                ( Var "0" )
+            )
+        )
+    )
+, Com "POW"
+    ( App
+        ( App S
+            ( App K ( App S I ) )
+        )
+        ( App
+            ( App S ( App K K ) ) I
+        )
+    )
+, Com "ISZERO"
+    ( App
+        ( App S
+            ( App ( App S I )
+                ( App
+                    ( App S ( App K K ) )
+                    ( App K
+                        ( Var "FALSE" )
+                    )
+                )
+            )
+        )
+        ( App K
+            ( Var "TRUE" )
+        )
+    )
+, Com "Φ"
+    ( App
+        ( App S
+            ( App
+                ( App S
+                    ( App K
+                        ( Var "PAIR" )
+                    )
+                )
+                ( App
+                    ( App S
+                        ( App K
+                            ( Var "SECOND" )
+                        )
+                    ) I
+                )
+            )
+        )
+        ( App
+            ( App S
+                ( App K
+                    ( Var "SUCC" )
+                )
+            )
+            ( App
+                ( App S
+                    ( App K
+                        ( Var "SECOND" )
+                    )
+                ) I
+            )
+        )
+    )
+, Com "PHI"
+    ( Var "Φ" )
+, Com "PRED"
+    ( App
+        ( App S
+            ( App K
+                ( Var "FIRST" )
+            )
+        )
+        ( App
+            ( App S
+                ( App ( App S I )
+                    ( App K
+                        ( Var "Φ" )
+                    )
+                )
+            )
+            ( App
+                ( App S
+                    ( App
+                        ( App S
+                            ( App K
+                                ( Var "PAIR" )
+                            )
+                        )
+                        ( App K
+                            ( Var "0" )
+                        )
+                    )
+                )
+                ( App K
+                    ( Var "0" )
+                )
+            )
+        )
+    )
+, Com "SUB"
+    ( App
+        ( App S
+            ( App
+                ( App S ( App K S ) )
+                ( App
+                    ( App S
+                        ( App K ( App S I ) )
+                    )
+                    ( App
+                        ( App S ( App K K ) )
+                        ( App K
+                            ( Var "PRED" )
+                        )
+                    )
+                )
+            )
+        )
+        ( App
+            ( App S ( App K K ) ) I
+        )
+    )
+, Com "LEQ"
+    ( App
+        ( App S
+            ( App
+                ( App S ( App K S ) )
+                ( App
+                    ( App S ( App K K ) )
+                    ( App K
+                        ( Var "ISZERO" )
+                    )
+                )
+            )
+        )
+        ( App
+            ( App S
+                ( App
+                    ( App S ( App K S ) )
+                    ( App
+                        ( App S
+                            ( App
+                                ( App S ( App K S ) )
+                                ( App
+                                    ( App S ( App K K ) )
+                                    ( App K
+                                        ( Var "SUB" )
+                                    )
+                                )
+                            )
+                        )
+                        ( App
+                            ( App S ( App K K ) ) I
+                        )
+                    )
+                )
+            ) ( App K I )
+        )
+    )
+]

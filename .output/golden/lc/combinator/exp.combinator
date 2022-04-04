@@ -1,0 +1,16 @@
+[ Com "exp"
+    ( App
+        ( App S
+            ( App K ( App S I ) )
+        )
+        ( App
+            ( App S ( App K K ) ) I
+        )
+    )
+, App
+    ( App
+        ( Var "exp" )
+        ( Var "2" )
+    )
+    ( Var "3" )
+]

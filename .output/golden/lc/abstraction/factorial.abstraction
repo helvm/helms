@@ -1,0 +1,149 @@
+[ Com "true"
+    ( Abs "x"
+        ( Abs "y"
+            ( Var "x" )
+        )
+    )
+, Com "false"
+    ( Abs "x"
+        ( Abs "y"
+            ( Var "y" )
+        )
+    )
+, Com "succ"
+    ( Abs "n"
+        ( Abs "f"
+            ( Abs "x"
+                ( App
+                    ( Var "f" )
+                    ( App
+                        ( App
+                            ( Var "n" )
+                            ( Var "f" )
+                        )
+                        ( Var "x" )
+                    )
+                )
+            )
+        )
+    )
+, Com "pred"
+    ( Abs "n"
+        ( Abs "f"
+            ( Abs "x"
+                ( App
+                    ( App
+                        ( App
+                            ( Var "n" )
+                            ( Abs "g"
+                                ( Abs "h"
+                                    ( App
+                                        ( Var "h" )
+                                        ( App
+                                            ( Var "g" )
+                                            ( Var "f" )
+                                        )
+                                    )
+                                )
+                            )
+                        )
+                        ( Abs "u"
+                            ( Var "x" )
+                        )
+                    )
+                    ( Abs "u"
+                        ( Var "u" )
+                    )
+                )
+            )
+        )
+    )
+, Com "mul"
+    ( Abs "m"
+        ( Abs "n"
+            ( Abs "f"
+                ( App
+                    ( Var "m" )
+                    ( App
+                        ( Var "n" )
+                        ( Var "f" )
+                    )
+                )
+            )
+        )
+    )
+, Com "is0"
+    ( Abs "n"
+        ( App
+            ( App
+                ( Var "n" )
+                ( Abs "x"
+                    ( Var "false" )
+                )
+            )
+            ( Var "true" )
+        )
+    )
+, Com "Y"
+    ( Abs "f"
+        ( App
+            ( Abs "x"
+                ( App
+                    ( Var "x" )
+                    ( Var "x" )
+                )
+            )
+            ( Abs "x"
+                ( App
+                    ( Var "f" )
+                    ( App
+                        ( Var "x" )
+                        ( Var "x" )
+                    )
+                )
+            )
+        )
+    )
+, Com "fact"
+    ( App
+        ( Var "Y" )
+        ( Abs "f"
+            ( Abs "n"
+                ( App
+                    ( App
+                        ( App
+                            ( Var "is0" )
+                            ( Var "n" )
+                        )
+                        ( Var "1" )
+                    )
+                    ( App
+                        ( App
+                            ( Var "mul" )
+                            ( Var "n" )
+                        )
+                        ( App
+                            ( Var "f" )
+                            ( App
+                                ( Var "pred" )
+                                ( Var "n" )
+                            )
+                        )
+                    )
+                )
+            )
+        )
+    )
+, App
+    ( Var "fact" )
+    ( App
+        ( Var "succ" )
+        ( App
+            ( Var "succ" )
+            ( App
+                ( Var "succ" )
+                ( Var "1" )
+            )
+        )
+    )
+]

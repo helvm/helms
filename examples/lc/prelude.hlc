@@ -1,7 +1,5 @@
 ; Constants
 # id      = \x -> x
-; defineCombinator id \x . x
-; =combinator id \x . x
 # true    = \x -> \y -> x
 # false   = \x -> \y -> y
 

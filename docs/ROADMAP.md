@@ -1,9 +1,11 @@
 # 🛣️ ROADMAP
 
-**Planned features.**
+**Milestones**:
 
-See [Issues](https://github.com/helvm/helms/issues).
+1. [Lambda Calculus](https://github.com/helvm/helma/milestone/1)
+2. [Scheme](https://github.com/helvm/helma/milestone/2)
+3. [Langs](https://github.com/helvm/helma/milestone/3)
 
-For short version see [TODO](TODO.md).
+For planned features see [TODO](TODO.md).
 
 ## 🌈 ❤️ 💛 💚 💙 🤍 🖤 🦄

@@ -1,6 +1,6 @@
 # TODO
 
-**Future Features**
+**Planned Features**
 
 *We do not have **todo** now.*
 

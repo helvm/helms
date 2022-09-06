@@ -2,9 +2,9 @@
 
 **Milestones**:
 
-1. [Lambda Calculus](https://github.com/helvm/helma/milestone/1)
-2. [Scheme](https://github.com/helvm/helma/milestone/2)
-3. [Langs](https://github.com/helvm/helma/milestone/3)
+1. [Scheme Subset](https://github.com/helvm/helms/milestone/1)
+2. [Scheme Like Languages](https://github.com/helvm/helms/milestone/2)
+3. [Other Dynamic Languages](https://github.com/helvm/helms/milestone/3)
 
 For planned features see [TODO](TODO.md).
 

@@ -61,4 +61,4 @@ make hpc
 
 For more see [CONTRIBUTING](CONTRIBUTING.md).
 
-## 🌈 ❤️ 💛 💚 💙 🤍 🖤 🦄
+## 🦄 🌈 ❤️ 💛 💚 💙 🤍 🖤

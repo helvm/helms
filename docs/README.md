@@ -22,7 +22,7 @@
 * [CONTRIBUTING](CONTRIBUTING.md)
 * [CODE OF CONDUCT](CODE_OF_CONDUCT.md)
 
-## 🌈 ❤️ 💛 💚 💙 🤍 🖤 🦄
+## 🦄 🌈 ❤️ 💛 💚 💙 🤍 🖤
 
 [Very high-level]:   https://en.wikipedia.org/wiki/Very_high-level_programming_language
 [Fourth-generation]: https://en.wikipedia.org/wiki/Fourth-generation_programming_language

@@ -6,4 +6,4 @@
 
 For more see [CHANGELOG](CHANGELOG.md).
 
-## 🌈 ❤️ 💛 💚 💙 🤍 🖤 🦄
+## 🦄 🌈 ❤️ 💛 💚 💙 🤍 🖤

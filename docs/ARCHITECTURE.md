@@ -46,4 +46,4 @@ Tools and libraries:
   * [ ] [megaparsec](https://github.com/mrkkrp/megaparsec) for parsing languages
   * [x] [repline](https://github.com/sdiehl/repline) for REPL
 
-## 🌈 ❤️ 💛 💚 💙 🤍 🖤 🦄
+## 🦄 🌈 ❤️ 💛 💚 💙 🤍 🖤

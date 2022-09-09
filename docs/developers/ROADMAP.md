@@ -6,6 +6,6 @@
 2. [Scheme Like Languages](https://github.com/helvm/helms/milestone/2)
 3. [Other Dynamic Languages](https://github.com/helvm/helms/milestone/3)
 
-For planned features see [TODO](TODO.md).
+For planned features see [TODO](../developers/TODO.md).
 
 ## 🦄 🌈 ❤️ 💛 💚 💙 🤍 🖤

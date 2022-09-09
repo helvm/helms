@@ -9,7 +9,7 @@ homepage:              http://helvm.org/helms/
 bug-reports:           https://github.com/helvm/helms/issues
 
 license:               Apache-2.0
-license-file:          docs/LICENSE-APACHE
+license-file:          docs/license/LICENSE-APACHE
 author:                Kamil Adam
 maintainer:            kamil.adam.zabinski@gmail.com
 copyright:             2020-2022 WriteOnly Developers
@@ -17,7 +17,7 @@ copyright:             2020-2022 WriteOnly Developers
 category:              Language
 build-type:            Simple
 extra-source-files:
-  docs/CHANGELOG.md
+  docs/developers/CHANGELOG.md
   docs/README.md
 
 tested-with:           GHC == 9.2.1

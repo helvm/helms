@@ -33,10 +33,10 @@
 ; 2 = \f -> \x -> f (f x)
 ; 3 = \f -> \x -> f (f (f x))
 
-; 0 = \fx -> x
-; 1 = \fx -> f x
-; 2 = \fx -> f (f x)
-; 3 = \fx -> f (f (f x))
+; 0 = \f x -> x
+; 1 = \f x -> f x
+; 2 = \f x -> f (f x)
+; 3 = \f x -> f (f (f x))
 
 ; Arithmetic - pred
 # ISZERO = \n -> n (\x -> FALSE) TRUE

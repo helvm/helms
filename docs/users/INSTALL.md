@@ -59,6 +59,6 @@ make hpc
 
 ## Other
 
-For more see [CONTRIBUTING](CONTRIBUTING.md).
+For more see [CONTRIBUTING](../developers/CONTRIBUTING.md).
 
 ## 🦄 🌈 ❤️ 💛 💚 💙 🤍 🖤

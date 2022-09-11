@@ -1,10 +1,8 @@
 #!/usr/bin/env bash
 
-make haddock stan hlint
-
 mkdir_and_cp() {
   mkdir -p $(dirname "$2") && cp -r "$1" "$2"
 }
 
-mkdir_and_cp dist-newstyle/build/*/*/*/doc/html/helct docs/reports/doc
-mkdir_and_cp dist-newstyle/build/*/*/*/hpc/vanilla/html docs/reports/hpc
+mkdir_and_cp dist-newstyle/build/*/*/*/doc/html/helms/ docs/reports
+mkdir_and_cp dist-newstyle/build/*/*/*/hpc/vanilla/html/helms-test/ docs/reports
